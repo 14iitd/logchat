@@ -6,39 +6,49 @@ class FollowDao():
     def __init__(self):
         self.db = mongo_connector.db
 
-    def follow_user(self, user1 ,user2):
+    def follow_user(self, follow_data):
         """
-        :param user1: user1 follows user2
-        :param user2: user2 is followed by user1
+
         :return:
         """
         follow_collection = self.db["follow"]
-        new_follow = follow_collection.insert_one({"user1": user1, "user2": user2})
+        new_follow = follow_collection.insert_one({"user": follow_data["user_id"], "celeb": follow_data["celeb"]})
         user = follow_collection.find_one({"_id": new_follow.inserted_id})
         return convert_to_str(user)
 
-    def follow_hashtag(self, following_user_id, hashtag):
-        tag_follow_collection = self.db["hashtag_follow"]
-        new_follow = tag_follow_collection.insert_one({"follower": following_user_id, "tag": hashtag})
-        user = tag_follow_collection.find_one({"_id": new_follow.inserted_id})
-        return convert_to_str(user)
+    # def follow_hashtag(self, following_user_id, hashtag):
+    #     tag_follow_collection = self.db["hashtag_follow"]
+    #     new_follow = tag_follow_collection.insert_one({"follower": following_user_id, "tag": hashtag})
+    #     user = tag_follow_collection.find_one({"_id": new_follow.inserted_id})
+    #     return convert_to_str(user)
 
     def unfollow_user(self, user1, user2):
         follow_collection = self.db["follow"]
-        update_data = {"$set": {"status": "deleted"}}
-        query = {"user1": user1, "user2": user2}
-        result = follow_collection.update_one(query, update_data)
+        query = {"user": user1, "celeb": user2}
+        result = follow_collection.delete_one(query)
         return result.matched_count()
 
-    def get_followers(self, user2):
+    def get_followers(self, celeb):
         follow_collection = self.db["follow"]
-        count = follow_collection.count({ "user2": user2 })
+        count = follow_collection.count({"celeb": celeb})
         return count
 
-    def get_followings(self, user1):
+    def get_followings(self, user):
         follow_collection = self.db["follow"]
-        count = follow_collection.count({"user1": user1})
+        count = follow_collection.count({"user": user})
         return count
 
-    def get_followed_hashtags(self, user_id):
-        return None
+    def get_following_user_ids(self, user):
+        follow_collection = self.db["follow"]
+        celeb = follow_collection.find({"user": user})
+        res = []
+        for ce in celeb:
+            res.append(ce["celeb"])
+        return res
+    def is_following(self,user,celeb):
+        follow_collection = self.db["follow"]
+        celeb = follow_collection.find({"user": user,"celeb":user})
+        if celeb:
+            return True
+        return False
+

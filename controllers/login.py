@@ -25,46 +25,14 @@ from fastapi.openapi.models import OAuthFlows as OAuthFlowsModel
 from fastapi.openapi.models import OAuthFlowAuthorizationCode
 
 
-# class GoogleOAuth2(OAuth2AuthorizationCodeBearer):
-#     def __init__(self, authorizationUrl: str, tokenUrl: str, clientId: str = None, clientSecret: str = None):
-#         self.client_id = clientId or os.getenv("GOOGLE_CLIENT_ID")
-#         self.client_secret = clientSecret or os.getenv("GOOGLE_CLIENT_SECRET")
-#         flows_model = OAuthFlowsModel(
-#             authorizationCode=OAuthFlowAuthorizationCode(
-#                 authorizationUrl=authorizationUrl,
-#                 tokenUrl=tokenUrl,
-#             )
-#         )
-#         self.tokenUrl = tokenUrl
-#         self.flows = flows_model
-#
-#
-# # Example usage
-# google_oauth2 = GoogleOAuth2(
-#     authorizationUrl="https://accounts.google.com/o/oauth2/auth",
-#     tokenUrl="https://accounts.google.com/o/oauth2/token",
-# )
-
-
-# def get_current_user(token: str = Depends(google_oauth2)):
-#     try:
-#         credentials_exception = HTTPException(
-#             status_code=401,
-#             detail="Could not validate credentials",
-#             headers={"WWW-Authenticate": "Bearer"},
-#         )
-#         payload = jwt.decode(token, os.getenv("GOOGLE_CLIENT_SECRET"), algorithms=["RS256"])
-#         return payload
-#     except JWTError:
-#         raise credentials_exception
-
 
 def get_default_user(request:Request,payload:Dict):
     try:
         #import pdb;pdb.set_trace()
         #print(request)
-        token=request.headers.get("token")
-        user_data = user_service.get_user_by_token(token)
+        token = request.headers.get("token")
+        email = payload.get('email')
+        user_data = user_service.get_user_by_token_email(token,email)
         return user_data
     except Exception as ex:
         raise ex

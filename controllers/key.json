@@ -1,0 +1,13 @@
+{
+  "type": "service_account",
+  "project_id": "infra-chimera-410417",
+  "private_key_id": "b23261eafab35f3cd6ab421236768dbf1627028e",
+  "private_key": "-----BEGIN PRIVATE KEY-----\nMIIEvwIBADANBgkqhkiG9w0BAQEFAASCBKkwggSlAgEAAoIBAQDFFkUSUEVf3Wt2\njKhALD0hJYizU2eo2mS+RRJDNNS4PrKT70+eeem0sE3s0+lQK1zeIQnrs0NeN4+q\nY+e1l/0q+EOswAlJ0HJ4MVRe9OimHUOOghAXrsb10QwLM4dNElczkEfI7ITIRITX\n1nRBor4QaLaiDcIbdRRwuApkye9EaS2zdThkVt5KCNjeaXtKhtoPsDd7td027U0t\nJ/Lmmec4uHzG+eckEihvGDG7eOoX1NMn9k6wHTfq86M9YV7X4t0eo2Vf5tOJI0WN\ndJdoT9gfr8H/ytylARuEFuV7YG9Ohbtu4HyC+vatOZO6wdObUw3p6O+ZehNb9wg7\nhqdRnyoHAgMBAAECggEAEgWjeEq9z/KBNqcjEDHbadIIVORDaNsw9ih+bzCADn8G\njmTbl3wXb63lhPVVyD5xhgsTC1S/oXhxhd0P3aOnLgw4sq3MIPio1wPPxBp0wb06\n+xI6otJudXZRuckoTgG81pq9bbVEaRnBj15tZWkaed6mwLKDCvFjAUcFsEoPkTuR\n3Mnl3XwRrQusxuAAf/AzxVJKrZpUk4AS9sx4cFGxU83oPgKH7lhXJKkX+WQ7pLXe\n7Qt0x6J51Z59oZa/3vq5ih9/57WCHfCsuXUgu/Ad8ATC+HOg5uFS+KZvcD7gcVwW\n+Yot90hCufp57+vF5/p8f5UGGssS6/olDREYgyzNnQKBgQDixwUj7lqQO2PDpBqI\neJeTjFGYBj08dsdwCAcimqbOQ47v8W0dxh3n8AgEMEap/NoFw4KP4ABlhfiu7rjG\nYMk5x6G6VfRocv4mzhXAaja04zHOpqm4iKJZlynb8bQFLw9EVf0bg5IbW2rkheTK\nbODXfikQRzpelDuJ+QxK+4D5tQKBgQDee9DUNEnflZiuVw9KTvXx2H8GNrJ7PMja\nzuB4fgmf8+ur7AWjMJcvURFGk7IEfPdi3X2ZarYSqL7BIMjtbZWRgS5zBRopCj/5\nstMsWpwWQF7se5zWHXT4TmPshlXNseIkaV5tTVEl5Pmylei2WSPTnKkJ9EieLFnf\n/RzG7xc6SwKBgQDNAjolZ167sNTZkkriQJJWsq04j7tgI8jcAIXixIgzQ2O+ijSo\ni+eRO68jijj3hzvZpgsr4ca6AMj1651iyTBgaZZNC1Nt8TbNAdUsI1jdYd4vAP/B\ncNPDxiHzUaf6X7afglTUQLcewB/8Awb38EG6zbR1oM6lnb/NVTXFu2O3WQKBgQCY\n2Lc/Ei0uTbf3DhiTFGwjGnkp66nywG+84yOTpAM4wHrIQf4dfuRevXMA6bcDHldW\ntJP1Mjqj1wo15DAl7YMz02v12St/xmrtQM2TSyywnMiZ7tJwxwv1CuXbOO75wZt7\nKGiW7ucxAX4KErMtk0/psVbwX8MD57RXDa0XfmqWwQKBgQCqU9ICdUIrVu5LMDIO\nZX7IIm+2BhOdsUWtfMbZLCrZnbdr+tq/mOoHSBct8oRKdUlkdbMNAcWNp1zDJoM4\nFRhGTD2NyKL+zqWdo0tKiRQ+LD5nGmR1DMdi+RdwzhVOYUhlDcJaMLVRqHnS/VaS\nc9RPefKDwvBEz4upoRbnweVIlA==\n-----END PRIVATE KEY-----\n",
+  "client_email": "gcs-access@infra-chimera-410417.iam.gserviceaccount.com",
+  "client_id": "107760249163885770559",
+  "auth_uri": "https://accounts.google.com/o/oauth2/auth",
+  "token_uri": "https://oauth2.googleapis.com/token",
+  "auth_provider_x509_cert_url": "https://www.googleapis.com/oauth2/v1/certs",
+  "client_x509_cert_url": "https://www.googleapis.com/robot/v1/metadata/x509/gcs-access%40infra-chimera-410417.iam.gserviceaccount.com",
+  "universe_domain": "googleapis.com"
+}

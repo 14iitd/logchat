@@ -9,9 +9,12 @@ class LikeService():
 
     def get_likes_by_post_ids(self,post_ids):
         likes = self.like_dao.get_likes_by_posts(post_ids)
+
         like_map={}
         for item in likes:
             like_map[item["post_id"]]=item.get("count")
+        import pdb;
+        pdb.set_trace()
         return like_map
 
     def like_post(self, user_id, post_id):

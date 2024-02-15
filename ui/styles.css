@@ -1,48 +1,53 @@
-/* Basic styling for the microblogging site */
-
 body {
-  font-family: Arial, sans-serif;
-  margin: 0;
-  padding: 20px;
-  background-color: #f4f4f4;
+    margin: 0;
+    font-family: Arial, sans-serif;
 }
 
-.container {
-  max-width: 800px;
-  margin: 0 auto;
+.chat-container {
+    display: flex;
+    height: 100vh;
 }
 
-h1 {
-  text-align: center;
-  margin-bottom: 20px;
+.sidebar {
+    width: 30%;
+    background-color: #f0f0f0;
+    padding: 20px;
 }
 
-.new-post {
-  margin-bottom: 20px;
+.recent-chats {
+    border-bottom: 1px solid #ccc;
+    padding-bottom: 10px;
 }
 
-.new-post textarea {
-  width: 100%;
-  height: 100px;
-  resize: none;
-  margin-bottom: 10px;
+.recent-chats h2 {
+    margin-bottom: 10px;
 }
 
-.new-post button {
-  padding: 8px 16px;
-  background-color: #007bff;
-  color: #fff;
-  border: none;
-  cursor: pointer;
+.chat-area {
+    flex: 1;
+    padding: 20px;
+    overflow-y: auto;
 }
 
-.post {
-  background-color: #fff;
-  border: 1px solid #ddd;
-  padding: 10px;
-  margin-bottom: 10px;
+.chat-header h2 {
+    margin-bottom: 10px;
 }
 
-.post button {
-  margin-top: 5px;
+.chat-messages {
+    border-bottom: 1px solid #ccc;
+    padding-bottom: 10px;
+}
+
+.chat-input {
+    margin-top: 20px;
+}
+
+input {
+    padding: 8px;
+    width: 70%;
+}
+
+button {
+    padding: 8px;
+    cursor: pointer;
 }

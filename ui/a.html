@@ -1,21 +1,33 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <title>Microblogging Site</title>
-  <link rel="stylesheet" href="styles.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chat App</title>
+    <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-  <div class="container">
-    <h1>Microblogging Site</h1>
-    <div class="new-post">
-      <textarea id="postContent" placeholder="Enter your post"></textarea>
-      <button onclick="createPost()">Post</button>
+
+<div class="chat-container">
+    <div class="sidebar">
+        <div class="recent-chats">
+            <h2>Recent Chats</h2>
+            <ul id="recentChatsList"></ul>
+        </div>
     </div>
-    <div class="posts" id="postsContainer">
-      <!-- Posts will be displayed here -->
+
+    <div class="chat-area">
+        <div class="chat-header">
+            <h2>1-1 Chat</h2>
+        </div>
+        <div class="chat-messages" id="chatMessages"></div>
+        <div class="chat-input">
+            <input type="text" id="messageInput" placeholder="Type your message...">
+            <button onclick="sendMessage()">Send</button>
+        </div>
     </div>
-  </div>
-  <script src="scripts.js"></script>
+</div>
+
+<script src="scripts.js"></script>
 </body>
 </html>
