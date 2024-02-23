@@ -7,6 +7,7 @@ from controllers.login import app as loginapi
 from controllers.likeShareRe import router as likeapis
 from controllers.profile import router as profileapis
 from controllers.fileUpload import router as fileapis
+from controllers.follow import router as followapis
 from fastapi.middleware.cors import CORSMiddleware
 
 app = FastAPI()
@@ -27,6 +28,7 @@ app.include_router(loginapi)
 app.include_router(likeapis)
 app.include_router(profileapis)
 app.include_router(fileapis)
+app.include_router(followapis)
 
 
 

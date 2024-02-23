@@ -29,7 +29,7 @@ async def follow_user(request: Request, request_data: Dict):
 
                    }
     created_follow = followService.follow(follow_data)
-    return f"You are now following {created_follow.celeb}"
+    return f"You are now following {created_follow}"
 
 
 @router.post("/api/unfollow", response_model=str)
@@ -38,9 +38,8 @@ async def follow_user(request: Request, request_data: Dict):
     token = headers.get("token")
     user_id = request_data.get("user_id")
     celeb_id = request_data.get("celeb_id")
-
     follow_data = {"user_id": user_id, "celeb": celeb_id
                    }
     created_follow = followService.unfollow(user_id,celeb_id)
-    return f"You are not following {created_follow.celeb} now"
+    return f"You are not following {created_follow} now"
 

@@ -25,17 +25,18 @@ class FollowDao():
     def unfollow_user(self, user1, user2):
         follow_collection = self.db["follow"]
         query = {"user": user1, "celeb": user2}
-        result = follow_collection.delete_one(query)
-        return result.matched_count()
+        result = follow_collection.delete_many(query)
+        return result.raw_result["n"]
 
     def get_followers(self, celeb):
         follow_collection = self.db["follow"]
-        count = follow_collection.count({"celeb": celeb})
+        #import pdb;pdb.set_trace()
+        count = follow_collection.count_documents({"celeb": celeb})
         return count
 
     def get_followings(self, user):
         follow_collection = self.db["follow"]
-        count = follow_collection.count({"user": user})
+        count = follow_collection.count_documents({"user": user})
         return count
 
     def get_following_user_ids(self, user):
@@ -47,8 +48,9 @@ class FollowDao():
         return res
     def is_following(self,user,celeb):
         follow_collection = self.db["follow"]
-        celeb = follow_collection.find({"user": user,"celeb":user})
-        if celeb:
+        data = follow_collection.find_one({"user": user,"celeb":celeb})
+        import pdb;pdb.set_trace()
+        if data:
             return True
         return False
 

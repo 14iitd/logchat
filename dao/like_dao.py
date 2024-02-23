@@ -29,7 +29,7 @@ class LikeDao():
 
     def get_user_like(self, user2):
         like_collection = self.db["posts_like"]
-        likes = like_collection.count({"post_user": user2})
+        likes = like_collection.count_documents({"post_user": user2})
         return likes
 
     def get_likes_by_posts(self,post_ids):

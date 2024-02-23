@@ -6,7 +6,7 @@ class ChatDao():
     def __init__(self):
         self.db = mongo_connector.db
 
-    def create_chat_room(self,appname, userid1, userid2,):
+    def update_chat_room(self,room_data):
         like_collection = self.db["posts_like"]
         like_data = {"user1": user_id, "post_id": post_id, "post_user": user2}
         new_post = like_collection.insert_one(like_data)

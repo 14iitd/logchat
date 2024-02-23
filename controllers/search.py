@@ -23,7 +23,7 @@ class CustomJSONEncoder(json.JSONEncoder):
             return super().default(obj)
 
 
-@router.get("/search/api/v1", response_model=str)
+@router.get("/search/api/v1/{query}", response_model=str)
 async def search_user(query:str):
     user_posts = search_service.get_users_by_search(query)
     res = {"users": user_posts}
