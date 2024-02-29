@@ -38,7 +38,7 @@ class FeedService():
             users_map[temp_user_id] = {"id":temp_user_id,
                                        "name":item["username"],
                                        "profile_image":item.get("image_url")}
-        print(users_map)
+        #print(users_map)
 
         likes_map=self.likeService.get_likes_by_post_ids(post_ids)
         for item in posts:

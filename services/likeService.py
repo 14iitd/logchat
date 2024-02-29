@@ -13,8 +13,8 @@ class LikeService():
         like_map={}
         for item in likes:
             like_map[item["post_id"]]=item.get("count")
-        import pdb;
-        pdb.set_trace()
+        #import pdb;
+        #pdb.set_trace()
         return like_map
 
     def like_post(self, user_id, post_id):
