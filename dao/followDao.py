@@ -49,7 +49,7 @@ class FollowDao():
     def is_following(self,user,celeb):
         follow_collection = self.db["follow"]
         data = follow_collection.find_one({"user": user,"celeb":celeb})
-        import pdb;pdb.set_trace()
+        #import pdb;pdb.set_trace()
         if data:
             return True
         return False

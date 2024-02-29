@@ -50,7 +50,8 @@ async def login(request:Request,payload:Dict,user: dict = Depends(get_default_us
             "email": payload.get("email"),
             "token": token,
             "full_name": payload.get("full_name"),
-            "username":str(current_millis)+payload.get("email") }
+            "username":str(current_millis)+payload.get("email"),
+            "image_url":payload.get("image_url")}
         user = user_service.create_user(user_data)
     # import pdb;pdb.set_trace()
     return JSONResponse(content=user, status_code=200)

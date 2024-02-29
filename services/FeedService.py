@@ -47,6 +47,6 @@ class FeedService():
             item["likes"]=likes_map.get(item["_id"])
             item["relog"] = 2
             item["share"] = 31
-        import pdb;
-        pdb.set_trace()
+        #import pdb;
+        #pdb.set_trace()
         return posts

@@ -45,7 +45,7 @@ async def upload_file(file: UploadFile = File(...)):
     blob = bucket.blob(file_path)
 
     blob.upload_from_file(file.file)
-    return {"file_path": "https:slogger.live/file/" + file_path}
+    return {"file_path":file_path}
 
 
 @router.get("/file/{file_name}")
