@@ -1,33 +1,49 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Chat App</title>
-    <link rel="stylesheet" href="styles.css">
+
+
+
 </head>
+
 <body>
+<style>
+        .native-ad {
+            max-width: 90%; /* Adjust the width as needed */
+            border: 1px solid #ccc;
+            padding: 1px;
+            text-align: center;
+        }
 
-<div class="chat-container">
-    <div class="sidebar">
-        <div class="recent-chats">
-            <h2>Recent Chats</h2>
-            <ul id="recentChatsList"></ul>
-        </div>
+        .ad-image {
+            max-width: 100%;
+            height: auto;
+        }
+
+        .install-now-button {
+            display: inline-block;
+            padding: 10px;
+            background-color: #4CAF50;
+            color: white;
+            text-decoration: none;
+            font-weight: bold;
+            border-radius: 5px;
+            margin-top: 10px;
+        }
+    </style>
+    <div class="native-ad">
+        <img src="https://play-lh.googleusercontent.com/DAjdd5-FcDTMBZXmornJOibQSbUJOSGSfw6NOBqMLNFPyI2hQJtC4ctiDOKW10AoQPg=w480-h960-rw" alt="Ad Image" class="ad-image">
+        <p><b> Playchat - Amazing Gaming App</p>
+        <a href="https://play.google.com/store/apps/details?id=in.abhishek.playchat&hl=en&gl=US" target="_blank" class="install-now-button">
+            Install Now
+        </a>
     </div>
 
-    <div class="chat-area">
-        <div class="chat-header">
-            <h2>1-1 Chat</h2>
-        </div>
-        <div class="chat-messages" id="chatMessages"></div>
-        <div class="chat-input">
-            <input type="text" id="messageInput" placeholder="Type your message...">
-            <button onclick="sendMessage()">Send</button>
-        </div>
-    </div>
-</div>
+    <!-- Your other webpage content goes here -->
 
-<script src="scripts.js"></script>
 </body>
+
 </html>
