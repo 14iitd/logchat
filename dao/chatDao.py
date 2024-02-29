@@ -2,11 +2,11 @@ from mongoConnector import mongo_connector
 from utils import convert_to_str
 
 
-class LikeDao():
+class ChatDao():
     def __init__(self):
         self.db = mongo_connector.db
 
-    def like(self, user_id, post_id, user2):
+    def update_chat_room(self,room_data):
         like_collection = self.db["posts_like"]
         like_data = {"user1": user_id, "post_id": post_id, "post_user": user2}
         new_post = like_collection.insert_one(like_data)
@@ -14,7 +14,7 @@ class LikeDao():
         created_post["_id"] = str(created_post["_id"])
         return created_post
 
-    def unlike(self, user_id, post_id):
+    def get_chat_rooms(self,appname, user_id):
         like_collection = self.db["posts_like"]
         query = {"user1": user_id, post_id: post_id}
         deleted_post = like_collection.find_one_and_delete(query)
@@ -29,7 +29,7 @@ class LikeDao():
 
     def get_user_like(self, user2):
         like_collection = self.db["posts_like"]
-        likes = like_collection.count_documents({"post_user": user2})
+        likes = like_collection.count({"post_user": user2})
         return likes
 
     def get_likes_by_posts(self,post_ids):

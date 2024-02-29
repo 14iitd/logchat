@@ -23,8 +23,9 @@ class CustomJSONEncoder(json.JSONEncoder):
             return super().default(obj)
 
 
-@router.get("/api/feed/{user_id}", response_model=str)
-async def delete_post(user_id:str):
-    user_posts = feed_service.get_feed_for_user(user_id)
+@router.get("/feed/api/v1/{user_id}", response_model=str)
+async def get_user_timeline(user_id:str):
+    from utils import convert_to_str
+    user_posts = convert_to_str(feed_service.get_feed_for_user(user_id))
     res = {"posts": user_posts}
     return JSONResponse(res)

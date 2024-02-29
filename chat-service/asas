@@ -1,0 +1,5 @@
+GET /chats: Retrieve a list of chats for the logged-in user.
+GET /chats/{chat_id}: Retrieve messages in a specific chat.
+POST /chats/create/{user_id}: Create a new chat with another user.
+POST /chats/{chat_id}/send: Send a message in a chat.
+DELETE /chats/{chat_id}/delete: Delete a chat.

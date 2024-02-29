@@ -27,3 +27,20 @@ def extract_hashtags(post_content):
     hashtags = re.findall(hashtag_pattern, post_content)
 
     return hashtags
+
+import datetime
+import secrets
+import string
+def is_weekend():
+    today = datetime.datetime.now().weekday()
+    # Check if today is Saturday (5) or Sunday (6)
+    return today == 5 or today == 6
+
+# Check if today is a weekend day
+if is_weekend():
+    print("It's a weekend!")
+else:
+    print("It's not a weekend.")
+def generate_random_string(length=10):
+    characters = string.ascii_letters + string.digits
+    return ''.join(secrets.choice(characters) for _ in range(length))

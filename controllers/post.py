@@ -6,7 +6,7 @@ from datetime import datetime
 from typing import Dict
 from fastapi import APIRouter, Depends, Request
 from fastapi.encoders import jsonable_encoder
-from fastapi.responses import JSONResponse
+from fastapi.responses import JSONResponse, Response
 from mongoConnector import mongo_connector
 
 router = APIRouter()
@@ -27,16 +27,22 @@ class CustomJSONEncoder(json.JSONEncoder):
             return super().default(obj)
 
 
-@router.post("/api/posts", )
+@router.post("/post/api/v1/", )
 async def create_post(request: Request, request_data: Dict):
     headers = dict(request.headers)
     user_id = headers.get("user_id")
+    post_type = request_data.get("post_type")
+    bg_color = request_data.get("bg_color")
+    tags = request_data.get("tags")
+    texts = request_data.get("texts")
+    description = request_data.get("description")
+    image_url = request_data.get("image_url")
     import time
     current_millis = int(round(time.time() * 1000))
-    template_id=request_data.get("template_id")
-    post_data = {"user_id": user_id, "content": request_data.get("content"),
+    post_data = {"user_id": user_id, "type":post_type,"bg_color":bg_color,
+                 "tags":tags,"texts":texts,
                  "created_at": current_millis,
-                 "template_id":template_id
+                 "image":image_url,"description":description
                  }
     created_post = post_service.create_post(post_data)
     return JSONResponse(content=created_post)
@@ -54,10 +60,33 @@ async def get_user_posts(user_id: str):
     res = {"posts": user_posts}
     return JSONResponse(res)
 
-# @app.delete("/api/posts/{post_id}", response_model=str)
-# async def delete_post(post_id: str, current_user: UserInDB = Depends(get_current_user), db: AsyncIOMotorClient = Depends(get_mongo_db)):
-#     post_collection = db["posts"]
-#     result = await post_collection.delete_one({"_id": post_id, "user.username": current_user.username})
-#     if result.deleted_count == 0:
-#         raise HTTPException(status_code=404, detail="Post not found")
-#     return "Post deleted successfully"
+
+@router.delete("/api/posts/{post_id}", response_model=str)
+async def delete_post(post_id: str, request: Request):
+    headers = dict(request.headers)
+    user_id = headers.get("user_id")
+    user_posts = post_service.delete_post(user_id, post_id)
+    res = {"posts": user_posts}
+    return Response("deleted", status_code=204)
+
+
+@router.put("/api/posts/{post_id}", response_model=str)
+async def delete_post(post_id: str, request_data: Dict, request: Request):
+    headers = dict(request.headers)
+    user_id = headers.get("user_id")
+    import time
+    current_millis = int(round(time.time() * 1000))
+    template_id = request_data.get("template_id")
+    post_data = {"user_id": user_id, "content": request_data.get("content"),
+                 "edited_at": current_millis,
+                 "template_id": template_id,
+                 }
+    try:
+        created_post = post_service.update_post(user_id,post_id, post_data)
+
+    except Exception as ex:
+        return JSONResponse(content={"error":str(ex)},status_code=404)
+    return JSONResponse(content=created_post)
+
+
+

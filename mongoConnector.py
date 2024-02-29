@@ -24,7 +24,7 @@ class MongoDBConnector:
     def close(self):
         if self.client:
             self.client.close()
-#mongo_connector = MongoDBConnector(mongo_uri="mongodb+srv://dev:B$P*nZ#AU8WU4vs@cluster0.hkuutb6.mongodb.net/", db_name="logz")
-mongo_connector = MongoDBConnector(mongo_uri="mongodb://localhost:27017", db_name="logz")
+mongo_connector = MongoDBConnector(mongo_uri="mongodb://localhost:27017", db_name="loggr")
+
 # mongo_connector.connect()
 # mongo_connector.get_database()["demo"].insert_one({"a": 1})

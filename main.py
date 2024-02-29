@@ -4,10 +4,13 @@ from controllers.post import router as postapi
 from controllers.feed import router as feedapi
 from controllers.search import router as searchapi
 from controllers.login import app as loginapi
-from controllers.likeShare import router as likeapis
+from controllers.likeShareRe import router as likeapis
+from controllers.profile import router as profileapis
+from controllers.fileUpload import router as fileapis
+from controllers.follow import router as followapis
 from fastapi.middleware.cors import CORSMiddleware
 
-app = FastAPI(docs_url=None, redoc_url=None, openapi_url=None)
+app = FastAPI()
 origins = ["*"]
 
 # Add CORS middleware to handle OPTIONS requests
@@ -23,12 +26,17 @@ app.include_router(feedapi)
 app.include_router(searchapi)
 app.include_router(loginapi)
 app.include_router(likeapis)
+app.include_router(profileapis)
+app.include_router(fileapis)
+app.include_router(followapis)
+
 
 
 @app.get("/")
-async def health_check():
+async def root():
+    return {"message": "Hello World"}
 
-    return {"Message": "To access APIs put /docs in the URL."}
+
 # If this script is executed, run the FastAPI application directly
 if __name__ == "__main__":
     import uvicorn
