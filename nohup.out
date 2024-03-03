@@ -15035,3 +15035,1388 @@ INFO:     45.128.232.210:40988 - "CONNECT google.com%3A443 HTTP/1.1" 404 Not Fou
 INFO:     Will watch for changes in these directories: ['/root/logchat']
 WARNING:  "workers" flag is ignored when reloading is enabled.
 ERROR:    [Errno 98] Address already in use
+INFO:     Will watch for changes in these directories: ['/root/logchat']
+WARNING:  "workers" flag is ignored when reloading is enabled.
+INFO:     Uvicorn running on http://0.0.0.0:8080 (Press CTRL+C to quit)
+INFO:     Started reloader process [159975] using StatReload
+INFO:     Started server process [159977]
+INFO:     Waiting for application startup.
+INFO:     Application startup complete.
+It's not a weekend.
+INFO:     172.71.118.129:0 - "GET /feed/api/v1/jyguyg87 HTTP/1.1" 500 Internal Server Error
+ERROR:    Exception in ASGI application
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.9/dist-packages/uvicorn/protocols/http/h11_impl.py", line 408, in run_asgi
+    result = await app(  # type: ignore[func-returns-value]
+  File "/usr/local/lib/python3.9/dist-packages/uvicorn/middleware/proxy_headers.py", line 84, in __call__
+    return await self.app(scope, receive, send)
+  File "/usr/local/lib/python3.9/dist-packages/fastapi/applications.py", line 1106, in __call__
+    await super().__call__(scope, receive, send)
+  File "/usr/local/lib/python3.9/dist-packages/starlette/applications.py", line 122, in __call__
+    await self.middleware_stack(scope, receive, send)
+  File "/usr/local/lib/python3.9/dist-packages/starlette/middleware/errors.py", line 184, in __call__
+    raise exc
+  File "/usr/local/lib/python3.9/dist-packages/starlette/middleware/errors.py", line 162, in __call__
+    await self.app(scope, receive, _send)
+  File "/usr/local/lib/python3.9/dist-packages/starlette/middleware/cors.py", line 83, in __call__
+    await self.app(scope, receive, send)
+  File "/usr/local/lib/python3.9/dist-packages/starlette/middleware/exceptions.py", line 79, in __call__
+    raise exc
+  File "/usr/local/lib/python3.9/dist-packages/starlette/middleware/exceptions.py", line 68, in __call__
+    await self.app(scope, receive, sender)
+  File "/usr/local/lib/python3.9/dist-packages/fastapi/middleware/asyncexitstack.py", line 20, in __call__
+    raise e
+  File "/usr/local/lib/python3.9/dist-packages/fastapi/middleware/asyncexitstack.py", line 17, in __call__
+    await self.app(scope, receive, send)
+  File "/usr/local/lib/python3.9/dist-packages/starlette/routing.py", line 718, in __call__
+    await route.handle(scope, receive, send)
+  File "/usr/local/lib/python3.9/dist-packages/starlette/routing.py", line 276, in handle
+    await self.app(scope, receive, send)
+  File "/usr/local/lib/python3.9/dist-packages/starlette/routing.py", line 66, in app
+    response = await func(request)
+  File "/usr/local/lib/python3.9/dist-packages/fastapi/routing.py", line 274, in app
+    raw_response = await run_endpoint_function(
+  File "/usr/local/lib/python3.9/dist-packages/fastapi/routing.py", line 191, in run_endpoint_function
+    return await dependant.call(**values)
+  File "/root/logchat/controllers/feed.py", line 29, in get_user_timeline
+    user_posts = convert_to_str(feed_service.get_feed_for_user(user_id))
+  File "/root/logchat/services/FeedService.py", line 18, in get_feed_for_user
+    following = self.followService.get_celeb_user_ids(user_id)
+  File "/root/logchat/services/followService.py", line 14, in get_celeb_user_ids
+    return self.follow_dao.get_following_user_ids(user_id)
+  File "/root/logchat/dao/followDao.py", line 46, in get_following_user_ids
+    for ce in celeb:
+  File "/usr/local/lib/python3.9/dist-packages/pymongo/cursor.py", line 1264, in next
+    if len(self.__data) or self._refresh():
+  File "/usr/local/lib/python3.9/dist-packages/pymongo/cursor.py", line 1155, in _refresh
+    self.__session = self.__collection.database.client._ensure_session()
+  File "/usr/local/lib/python3.9/dist-packages/pymongo/mongo_client.py", line 1823, in _ensure_session
+    return self.__start_session(True, causal_consistency=False)
+  File "/usr/local/lib/python3.9/dist-packages/pymongo/mongo_client.py", line 1766, in __start_session
+    self._topology._check_implicit_session_support()
+  File "/usr/local/lib/python3.9/dist-packages/pymongo/topology.py", line 573, in _check_implicit_session_support
+    self._check_session_support()
+  File "/usr/local/lib/python3.9/dist-packages/pymongo/topology.py", line 589, in _check_session_support
+    self._select_servers_loop(
+  File "/usr/local/lib/python3.9/dist-packages/pymongo/topology.py", line 259, in _select_servers_loop
+    raise ServerSelectionTimeoutError(
+pymongo.errors.ServerSelectionTimeoutError: localhost:8887: [Errno 111] Connection refused (configured timeouts: socketTimeoutMS: 20000.0ms, connectTimeoutMS: 20000.0ms), Timeout: 30s, Topology Description: <TopologyDescription id: 65e0a2000007aec063c4fa52, topology_type: Unknown, servers: [<ServerDescription ('localhost', 8887) server_type: Unknown, rtt: None, error=AutoReconnect('localhost:8887: [Errno 111] Connection refused (configured timeouts: socketTimeoutMS: 20000.0ms, connectTimeoutMS: 20000.0ms)')>]>
+WARNING:  StatReload detected changes in 'mongoConnector.py'. Reloading...
+INFO:     172.71.118.128:0 - "GET /feed/api/v1/jyguyg87 HTTP/1.1" 500 Internal Server Error
+ERROR:    Exception in ASGI application
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.9/dist-packages/uvicorn/protocols/http/h11_impl.py", line 408, in run_asgi
+    result = await app(  # type: ignore[func-returns-value]
+  File "/usr/local/lib/python3.9/dist-packages/uvicorn/middleware/proxy_headers.py", line 84, in __call__
+    return await self.app(scope, receive, send)
+  File "/usr/local/lib/python3.9/dist-packages/fastapi/applications.py", line 1106, in __call__
+    await super().__call__(scope, receive, send)
+  File "/usr/local/lib/python3.9/dist-packages/starlette/applications.py", line 122, in __call__
+    await self.middleware_stack(scope, receive, send)
+  File "/usr/local/lib/python3.9/dist-packages/starlette/middleware/errors.py", line 184, in __call__
+    raise exc
+  File "/usr/local/lib/python3.9/dist-packages/starlette/middleware/errors.py", line 162, in __call__
+    await self.app(scope, receive, _send)
+  File "/usr/local/lib/python3.9/dist-packages/starlette/middleware/cors.py", line 83, in __call__
+    await self.app(scope, receive, send)
+  File "/usr/local/lib/python3.9/dist-packages/starlette/middleware/exceptions.py", line 79, in __call__
+    raise exc
+  File "/usr/local/lib/python3.9/dist-packages/starlette/middleware/exceptions.py", line 68, in __call__
+    await self.app(scope, receive, sender)
+  File "/usr/local/lib/python3.9/dist-packages/fastapi/middleware/asyncexitstack.py", line 20, in __call__
+    raise e
+  File "/usr/local/lib/python3.9/dist-packages/fastapi/middleware/asyncexitstack.py", line 17, in __call__
+    await self.app(scope, receive, send)
+  File "/usr/local/lib/python3.9/dist-packages/starlette/routing.py", line 718, in __call__
+    await route.handle(scope, receive, send)
+  File "/usr/local/lib/python3.9/dist-packages/starlette/routing.py", line 276, in handle
+    await self.app(scope, receive, send)
+  File "/usr/local/lib/python3.9/dist-packages/starlette/routing.py", line 66, in app
+    response = await func(request)
+  File "/usr/local/lib/python3.9/dist-packages/fastapi/routing.py", line 274, in app
+    raw_response = await run_endpoint_function(
+  File "/usr/local/lib/python3.9/dist-packages/fastapi/routing.py", line 191, in run_endpoint_function
+    return await dependant.call(**values)
+  File "/root/logchat/controllers/feed.py", line 29, in get_user_timeline
+    user_posts = convert_to_str(feed_service.get_feed_for_user(user_id))
+  File "/root/logchat/services/FeedService.py", line 18, in get_feed_for_user
+    following = self.followService.get_celeb_user_ids(user_id)
+  File "/root/logchat/services/followService.py", line 14, in get_celeb_user_ids
+    return self.follow_dao.get_following_user_ids(user_id)
+  File "/root/logchat/dao/followDao.py", line 46, in get_following_user_ids
+    for ce in celeb:
+  File "/usr/local/lib/python3.9/dist-packages/pymongo/cursor.py", line 1264, in next
+    if len(self.__data) or self._refresh():
+  File "/usr/local/lib/python3.9/dist-packages/pymongo/cursor.py", line 1155, in _refresh
+    self.__session = self.__collection.database.client._ensure_session()
+  File "/usr/local/lib/python3.9/dist-packages/pymongo/mongo_client.py", line 1823, in _ensure_session
+    return self.__start_session(True, causal_consistency=False)
+  File "/usr/local/lib/python3.9/dist-packages/pymongo/mongo_client.py", line 1766, in __start_session
+    self._topology._check_implicit_session_support()
+  File "/usr/local/lib/python3.9/dist-packages/pymongo/topology.py", line 573, in _check_implicit_session_support
+    self._check_session_support()
+  File "/usr/local/lib/python3.9/dist-packages/pymongo/topology.py", line 589, in _check_session_support
+    self._select_servers_loop(
+  File "/usr/local/lib/python3.9/dist-packages/pymongo/topology.py", line 259, in _select_servers_loop
+    raise ServerSelectionTimeoutError(
+pymongo.errors.ServerSelectionTimeoutError: localhost:8887: [Errno 111] Connection refused (configured timeouts: socketTimeoutMS: 20000.0ms, connectTimeoutMS: 20000.0ms), Timeout: 30s, Topology Description: <TopologyDescription id: 65e0a2000007aec063c4fa52, topology_type: Unknown, servers: [<ServerDescription ('localhost', 8887) server_type: Unknown, rtt: None, error=AutoReconnect('localhost:8887: [Errno 111] Connection refused (configured timeouts: socketTimeoutMS: 20000.0ms, connectTimeoutMS: 20000.0ms)')>]>
+INFO:     172.71.118.128:0 - "GET /feed/api/v1/jyguyg87 HTTP/1.1" 500 Internal Server Error
+ERROR:    Exception in ASGI application
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.9/dist-packages/uvicorn/protocols/http/h11_impl.py", line 408, in run_asgi
+    result = await app(  # type: ignore[func-returns-value]
+  File "/usr/local/lib/python3.9/dist-packages/uvicorn/middleware/proxy_headers.py", line 84, in __call__
+    return await self.app(scope, receive, send)
+  File "/usr/local/lib/python3.9/dist-packages/fastapi/applications.py", line 1106, in __call__
+    await super().__call__(scope, receive, send)
+  File "/usr/local/lib/python3.9/dist-packages/starlette/applications.py", line 122, in __call__
+    await self.middleware_stack(scope, receive, send)
+  File "/usr/local/lib/python3.9/dist-packages/starlette/middleware/errors.py", line 184, in __call__
+    raise exc
+  File "/usr/local/lib/python3.9/dist-packages/starlette/middleware/errors.py", line 162, in __call__
+    await self.app(scope, receive, _send)
+  File "/usr/local/lib/python3.9/dist-packages/starlette/middleware/cors.py", line 83, in __call__
+    await self.app(scope, receive, send)
+  File "/usr/local/lib/python3.9/dist-packages/starlette/middleware/exceptions.py", line 79, in __call__
+    raise exc
+  File "/usr/local/lib/python3.9/dist-packages/starlette/middleware/exceptions.py", line 68, in __call__
+    await self.app(scope, receive, sender)
+  File "/usr/local/lib/python3.9/dist-packages/fastapi/middleware/asyncexitstack.py", line 20, in __call__
+    raise e
+  File "/usr/local/lib/python3.9/dist-packages/fastapi/middleware/asyncexitstack.py", line 17, in __call__
+    await self.app(scope, receive, send)
+  File "/usr/local/lib/python3.9/dist-packages/starlette/routing.py", line 718, in __call__
+    await route.handle(scope, receive, send)
+  File "/usr/local/lib/python3.9/dist-packages/starlette/routing.py", line 276, in handle
+    await self.app(scope, receive, send)
+  File "/usr/local/lib/python3.9/dist-packages/starlette/routing.py", line 66, in app
+    response = await func(request)
+  File "/usr/local/lib/python3.9/dist-packages/fastapi/routing.py", line 274, in app
+    raw_response = await run_endpoint_function(
+  File "/usr/local/lib/python3.9/dist-packages/fastapi/routing.py", line 191, in run_endpoint_function
+    return await dependant.call(**values)
+  File "/root/logchat/controllers/feed.py", line 29, in get_user_timeline
+    user_posts = convert_to_str(feed_service.get_feed_for_user(user_id))
+  File "/root/logchat/services/FeedService.py", line 18, in get_feed_for_user
+    following = self.followService.get_celeb_user_ids(user_id)
+  File "/root/logchat/services/followService.py", line 14, in get_celeb_user_ids
+    return self.follow_dao.get_following_user_ids(user_id)
+  File "/root/logchat/dao/followDao.py", line 46, in get_following_user_ids
+    for ce in celeb:
+  File "/usr/local/lib/python3.9/dist-packages/pymongo/cursor.py", line 1264, in next
+    if len(self.__data) or self._refresh():
+  File "/usr/local/lib/python3.9/dist-packages/pymongo/cursor.py", line 1155, in _refresh
+    self.__session = self.__collection.database.client._ensure_session()
+  File "/usr/local/lib/python3.9/dist-packages/pymongo/mongo_client.py", line 1823, in _ensure_session
+    return self.__start_session(True, causal_consistency=False)
+  File "/usr/local/lib/python3.9/dist-packages/pymongo/mongo_client.py", line 1766, in __start_session
+    self._topology._check_implicit_session_support()
+  File "/usr/local/lib/python3.9/dist-packages/pymongo/topology.py", line 573, in _check_implicit_session_support
+    self._check_session_support()
+  File "/usr/local/lib/python3.9/dist-packages/pymongo/topology.py", line 589, in _check_session_support
+    self._select_servers_loop(
+  File "/usr/local/lib/python3.9/dist-packages/pymongo/topology.py", line 259, in _select_servers_loop
+    raise ServerSelectionTimeoutError(
+pymongo.errors.ServerSelectionTimeoutError: localhost:8887: [Errno 111] Connection refused (configured timeouts: socketTimeoutMS: 20000.0ms, connectTimeoutMS: 20000.0ms), Timeout: 30s, Topology Description: <TopologyDescription id: 65e0a2000007aec063c4fa52, topology_type: Unknown, servers: [<ServerDescription ('localhost', 8887) server_type: Unknown, rtt: None, error=AutoReconnect('localhost:8887: [Errno 111] Connection refused (configured timeouts: socketTimeoutMS: 20000.0ms, connectTimeoutMS: 20000.0ms)')>]>
+INFO:     Shutting down
+INFO:     172.71.118.128:0 - "GET /feed/api/v1/jyguyg87 HTTP/1.1" 500 Internal Server Error
+ERROR:    Exception in ASGI application
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.9/dist-packages/uvicorn/protocols/http/h11_impl.py", line 408, in run_asgi
+    result = await app(  # type: ignore[func-returns-value]
+  File "/usr/local/lib/python3.9/dist-packages/uvicorn/middleware/proxy_headers.py", line 84, in __call__
+    return await self.app(scope, receive, send)
+  File "/usr/local/lib/python3.9/dist-packages/fastapi/applications.py", line 1106, in __call__
+    await super().__call__(scope, receive, send)
+  File "/usr/local/lib/python3.9/dist-packages/starlette/applications.py", line 122, in __call__
+    await self.middleware_stack(scope, receive, send)
+  File "/usr/local/lib/python3.9/dist-packages/starlette/middleware/errors.py", line 184, in __call__
+    raise exc
+  File "/usr/local/lib/python3.9/dist-packages/starlette/middleware/errors.py", line 162, in __call__
+    await self.app(scope, receive, _send)
+  File "/usr/local/lib/python3.9/dist-packages/starlette/middleware/cors.py", line 83, in __call__
+    await self.app(scope, receive, send)
+  File "/usr/local/lib/python3.9/dist-packages/starlette/middleware/exceptions.py", line 79, in __call__
+    raise exc
+  File "/usr/local/lib/python3.9/dist-packages/starlette/middleware/exceptions.py", line 68, in __call__
+    await self.app(scope, receive, sender)
+  File "/usr/local/lib/python3.9/dist-packages/fastapi/middleware/asyncexitstack.py", line 20, in __call__
+    raise e
+  File "/usr/local/lib/python3.9/dist-packages/fastapi/middleware/asyncexitstack.py", line 17, in __call__
+    await self.app(scope, receive, send)
+  File "/usr/local/lib/python3.9/dist-packages/starlette/routing.py", line 718, in __call__
+    await route.handle(scope, receive, send)
+  File "/usr/local/lib/python3.9/dist-packages/starlette/routing.py", line 276, in handle
+    await self.app(scope, receive, send)
+  File "/usr/local/lib/python3.9/dist-packages/starlette/routing.py", line 66, in app
+    response = await func(request)
+  File "/usr/local/lib/python3.9/dist-packages/fastapi/routing.py", line 274, in app
+    raw_response = await run_endpoint_function(
+  File "/usr/local/lib/python3.9/dist-packages/fastapi/routing.py", line 191, in run_endpoint_function
+    return await dependant.call(**values)
+  File "/root/logchat/controllers/feed.py", line 29, in get_user_timeline
+    user_posts = convert_to_str(feed_service.get_feed_for_user(user_id))
+  File "/root/logchat/services/FeedService.py", line 18, in get_feed_for_user
+    following = self.followService.get_celeb_user_ids(user_id)
+  File "/root/logchat/services/followService.py", line 14, in get_celeb_user_ids
+    return self.follow_dao.get_following_user_ids(user_id)
+  File "/root/logchat/dao/followDao.py", line 46, in get_following_user_ids
+    for ce in celeb:
+  File "/usr/local/lib/python3.9/dist-packages/pymongo/cursor.py", line 1264, in next
+    if len(self.__data) or self._refresh():
+  File "/usr/local/lib/python3.9/dist-packages/pymongo/cursor.py", line 1155, in _refresh
+    self.__session = self.__collection.database.client._ensure_session()
+  File "/usr/local/lib/python3.9/dist-packages/pymongo/mongo_client.py", line 1823, in _ensure_session
+    return self.__start_session(True, causal_consistency=False)
+  File "/usr/local/lib/python3.9/dist-packages/pymongo/mongo_client.py", line 1766, in __start_session
+    self._topology._check_implicit_session_support()
+  File "/usr/local/lib/python3.9/dist-packages/pymongo/topology.py", line 573, in _check_implicit_session_support
+    self._check_session_support()
+  File "/usr/local/lib/python3.9/dist-packages/pymongo/topology.py", line 589, in _check_session_support
+    self._select_servers_loop(
+  File "/usr/local/lib/python3.9/dist-packages/pymongo/topology.py", line 259, in _select_servers_loop
+    raise ServerSelectionTimeoutError(
+pymongo.errors.ServerSelectionTimeoutError: localhost:8887: [Errno 111] Connection refused (configured timeouts: socketTimeoutMS: 20000.0ms, connectTimeoutMS: 20000.0ms), Timeout: 30s, Topology Description: <TopologyDescription id: 65e0a2000007aec063c4fa52, topology_type: Unknown, servers: [<ServerDescription ('localhost', 8887) server_type: Unknown, rtt: None, error=AutoReconnect('localhost:8887: [Errno 111] Connection refused (configured timeouts: socketTimeoutMS: 20000.0ms, connectTimeoutMS: 20000.0ms)')>]>
+INFO:     172.71.118.129:0 - "GET /feed/api/v1/jyguyg87 HTTP/1.1" 500 Internal Server Error
+ERROR:    Exception in ASGI application
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.9/dist-packages/uvicorn/protocols/http/h11_impl.py", line 408, in run_asgi
+    result = await app(  # type: ignore[func-returns-value]
+  File "/usr/local/lib/python3.9/dist-packages/uvicorn/middleware/proxy_headers.py", line 84, in __call__
+    return await self.app(scope, receive, send)
+  File "/usr/local/lib/python3.9/dist-packages/fastapi/applications.py", line 1106, in __call__
+    await super().__call__(scope, receive, send)
+  File "/usr/local/lib/python3.9/dist-packages/starlette/applications.py", line 122, in __call__
+    await self.middleware_stack(scope, receive, send)
+  File "/usr/local/lib/python3.9/dist-packages/starlette/middleware/errors.py", line 184, in __call__
+    raise exc
+  File "/usr/local/lib/python3.9/dist-packages/starlette/middleware/errors.py", line 162, in __call__
+    await self.app(scope, receive, _send)
+  File "/usr/local/lib/python3.9/dist-packages/starlette/middleware/cors.py", line 83, in __call__
+    await self.app(scope, receive, send)
+  File "/usr/local/lib/python3.9/dist-packages/starlette/middleware/exceptions.py", line 79, in __call__
+    raise exc
+  File "/usr/local/lib/python3.9/dist-packages/starlette/middleware/exceptions.py", line 68, in __call__
+    await self.app(scope, receive, sender)
+  File "/usr/local/lib/python3.9/dist-packages/fastapi/middleware/asyncexitstack.py", line 20, in __call__
+    raise e
+  File "/usr/local/lib/python3.9/dist-packages/fastapi/middleware/asyncexitstack.py", line 17, in __call__
+    await self.app(scope, receive, send)
+  File "/usr/local/lib/python3.9/dist-packages/starlette/routing.py", line 718, in __call__
+    await route.handle(scope, receive, send)
+  File "/usr/local/lib/python3.9/dist-packages/starlette/routing.py", line 276, in handle
+    await self.app(scope, receive, send)
+  File "/usr/local/lib/python3.9/dist-packages/starlette/routing.py", line 66, in app
+    response = await func(request)
+  File "/usr/local/lib/python3.9/dist-packages/fastapi/routing.py", line 274, in app
+    raw_response = await run_endpoint_function(
+  File "/usr/local/lib/python3.9/dist-packages/fastapi/routing.py", line 191, in run_endpoint_function
+    return await dependant.call(**values)
+  File "/root/logchat/controllers/feed.py", line 29, in get_user_timeline
+    user_posts = convert_to_str(feed_service.get_feed_for_user(user_id))
+  File "/root/logchat/services/FeedService.py", line 18, in get_feed_for_user
+    following = self.followService.get_celeb_user_ids(user_id)
+  File "/root/logchat/services/followService.py", line 14, in get_celeb_user_ids
+    return self.follow_dao.get_following_user_ids(user_id)
+  File "/root/logchat/dao/followDao.py", line 46, in get_following_user_ids
+    for ce in celeb:
+  File "/usr/local/lib/python3.9/dist-packages/pymongo/cursor.py", line 1264, in next
+    if len(self.__data) or self._refresh():
+  File "/usr/local/lib/python3.9/dist-packages/pymongo/cursor.py", line 1155, in _refresh
+    self.__session = self.__collection.database.client._ensure_session()
+  File "/usr/local/lib/python3.9/dist-packages/pymongo/mongo_client.py", line 1823, in _ensure_session
+    return self.__start_session(True, causal_consistency=False)
+  File "/usr/local/lib/python3.9/dist-packages/pymongo/mongo_client.py", line 1766, in __start_session
+    self._topology._check_implicit_session_support()
+  File "/usr/local/lib/python3.9/dist-packages/pymongo/topology.py", line 573, in _check_implicit_session_support
+    self._check_session_support()
+  File "/usr/local/lib/python3.9/dist-packages/pymongo/topology.py", line 589, in _check_session_support
+    self._select_servers_loop(
+  File "/usr/local/lib/python3.9/dist-packages/pymongo/topology.py", line 259, in _select_servers_loop
+    raise ServerSelectionTimeoutError(
+pymongo.errors.ServerSelectionTimeoutError: localhost:8887: [Errno 111] Connection refused (configured timeouts: socketTimeoutMS: 20000.0ms, connectTimeoutMS: 20000.0ms), Timeout: 30s, Topology Description: <TopologyDescription id: 65e0a2000007aec063c4fa52, topology_type: Unknown, servers: [<ServerDescription ('localhost', 8887) server_type: Unknown, rtt: None, error=AutoReconnect('localhost:8887: [Errno 111] Connection refused (configured timeouts: socketTimeoutMS: 20000.0ms, connectTimeoutMS: 20000.0ms)')>]>
+INFO:     Will watch for changes in these directories: ['/root/logchat']
+WARNING:  "workers" flag is ignored when reloading is enabled.
+INFO:     Uvicorn running on http://0.0.0.0:8080 (Press CTRL+C to quit)
+INFO:     Started reloader process [159998] using StatReload
+INFO:     Started server process [160000]
+INFO:     Waiting for application startup.
+INFO:     Application startup complete.
+It's not a weekend.
+{}
+> /root/logchat/services/likeService.py(18)get_likes_by_post_ids()
+-> return like_map
+(Pdb) INFO:     172.71.118.129:0 - "GET /feed/api/v1/jyguyg87 HTTP/1.1" 500 Internal Server Error
+ERROR:    Exception in ASGI application
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.9/dist-packages/uvicorn/protocols/http/h11_impl.py", line 408, in run_asgi
+    result = await app(  # type: ignore[func-returns-value]
+  File "/usr/local/lib/python3.9/dist-packages/uvicorn/middleware/proxy_headers.py", line 84, in __call__
+    return await self.app(scope, receive, send)
+  File "/usr/local/lib/python3.9/dist-packages/fastapi/applications.py", line 1106, in __call__
+    await super().__call__(scope, receive, send)
+  File "/usr/local/lib/python3.9/dist-packages/starlette/applications.py", line 122, in __call__
+    await self.middleware_stack(scope, receive, send)
+  File "/usr/local/lib/python3.9/dist-packages/starlette/middleware/errors.py", line 162, in __call__
+    await self.app(scope, receive, _send)
+  File "/usr/local/lib/python3.9/dist-packages/starlette/middleware/errors.py", line 162, in __call__
+    await self.app(scope, receive, _send)
+  File "/usr/local/lib/python3.9/dist-packages/starlette/middleware/cors.py", line 83, in __call__
+    await self.app(scope, receive, send)
+  File "/usr/local/lib/python3.9/dist-packages/starlette/middleware/exceptions.py", line 68, in __call__
+    await self.app(scope, receive, sender)
+  File "/usr/local/lib/python3.9/dist-packages/starlette/middleware/exceptions.py", line 68, in __call__
+    await self.app(scope, receive, sender)
+  File "/usr/local/lib/python3.9/dist-packages/fastapi/middleware/asyncexitstack.py", line 17, in __call__
+    await self.app(scope, receive, send)
+  File "/usr/local/lib/python3.9/dist-packages/fastapi/middleware/asyncexitstack.py", line 17, in __call__
+    await self.app(scope, receive, send)
+  File "/usr/local/lib/python3.9/dist-packages/starlette/routing.py", line 718, in __call__
+    await route.handle(scope, receive, send)
+  File "/usr/local/lib/python3.9/dist-packages/starlette/routing.py", line 276, in handle
+    await self.app(scope, receive, send)
+  File "/usr/local/lib/python3.9/dist-packages/starlette/routing.py", line 66, in app
+    response = await func(request)
+  File "/usr/local/lib/python3.9/dist-packages/fastapi/routing.py", line 274, in app
+    raw_response = await run_endpoint_function(
+  File "/usr/local/lib/python3.9/dist-packages/fastapi/routing.py", line 191, in run_endpoint_function
+    return await dependant.call(**values)
+  File "/root/logchat/controllers/feed.py", line 29, in get_user_timeline
+    user_posts = convert_to_str(feed_service.get_feed_for_user(user_id))
+  File "/root/logchat/services/FeedService.py", line 43, in get_feed_for_user
+    likes_map=self.likeService.get_likes_by_post_ids(post_ids)
+  File "/root/logchat/services/likeService.py", line 18, in get_likes_by_post_ids
+    return like_map
+  File "/root/logchat/services/likeService.py", line 18, in get_likes_by_post_ids
+    return like_map
+  File "/usr/lib/python3.9/bdb.py", line 88, in trace_dispatch
+    return self.dispatch_line(frame)
+  File "/usr/lib/python3.9/bdb.py", line 112, in dispatch_line
+    self.user_line(frame)
+  File "/usr/lib/python3.9/pdb.py", line 262, in user_line
+    self.interaction(frame, None)
+  File "/usr/lib/python3.9/pdb.py", line 357, in interaction
+    self._cmdloop()
+  File "/usr/lib/python3.9/pdb.py", line 322, in _cmdloop
+    self.cmdloop()
+  File "/usr/lib/python3.9/cmd.py", line 126, in cmdloop
+    line = input(self.prompt)
+OSError: [Errno 9] Bad file descriptor
+INFO:     172.71.118.183:0 - "GET /favicon.ico HTTP/1.1" 404 Not Found
+{}
+> /root/logchat/services/likeService.py(18)get_likes_by_post_ids()
+-> return like_map
+(Pdb) INFO:     172.71.118.128:0 - "GET /feed/api/v1/jyguyg87 HTTP/1.1" 500 Internal Server Error
+ERROR:    Exception in ASGI application
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.9/dist-packages/uvicorn/protocols/http/h11_impl.py", line 408, in run_asgi
+    result = await app(  # type: ignore[func-returns-value]
+  File "/usr/local/lib/python3.9/dist-packages/uvicorn/middleware/proxy_headers.py", line 84, in __call__
+    return await self.app(scope, receive, send)
+  File "/usr/local/lib/python3.9/dist-packages/fastapi/applications.py", line 1106, in __call__
+    await super().__call__(scope, receive, send)
+  File "/usr/local/lib/python3.9/dist-packages/starlette/applications.py", line 122, in __call__
+    await self.middleware_stack(scope, receive, send)
+  File "/usr/local/lib/python3.9/dist-packages/starlette/middleware/errors.py", line 162, in __call__
+    await self.app(scope, receive, _send)
+  File "/usr/local/lib/python3.9/dist-packages/starlette/middleware/errors.py", line 162, in __call__
+    await self.app(scope, receive, _send)
+  File "/usr/local/lib/python3.9/dist-packages/starlette/middleware/cors.py", line 83, in __call__
+    await self.app(scope, receive, send)
+  File "/usr/local/lib/python3.9/dist-packages/starlette/middleware/exceptions.py", line 68, in __call__
+    await self.app(scope, receive, sender)
+  File "/usr/local/lib/python3.9/dist-packages/starlette/middleware/exceptions.py", line 68, in __call__
+    await self.app(scope, receive, sender)
+  File "/usr/local/lib/python3.9/dist-packages/fastapi/middleware/asyncexitstack.py", line 17, in __call__
+    await self.app(scope, receive, send)
+  File "/usr/local/lib/python3.9/dist-packages/fastapi/middleware/asyncexitstack.py", line 17, in __call__
+    await self.app(scope, receive, send)
+  File "/usr/local/lib/python3.9/dist-packages/starlette/routing.py", line 718, in __call__
+    await route.handle(scope, receive, send)
+  File "/usr/local/lib/python3.9/dist-packages/starlette/routing.py", line 276, in handle
+    await self.app(scope, receive, send)
+  File "/usr/local/lib/python3.9/dist-packages/starlette/routing.py", line 66, in app
+    response = await func(request)
+  File "/usr/local/lib/python3.9/dist-packages/fastapi/routing.py", line 274, in app
+    raw_response = await run_endpoint_function(
+  File "/usr/local/lib/python3.9/dist-packages/fastapi/routing.py", line 191, in run_endpoint_function
+    return await dependant.call(**values)
+  File "/root/logchat/controllers/feed.py", line 29, in get_user_timeline
+    user_posts = convert_to_str(feed_service.get_feed_for_user(user_id))
+  File "/root/logchat/services/FeedService.py", line 43, in get_feed_for_user
+    likes_map=self.likeService.get_likes_by_post_ids(post_ids)
+  File "/root/logchat/services/likeService.py", line 18, in get_likes_by_post_ids
+    return like_map
+  File "/root/logchat/services/likeService.py", line 18, in get_likes_by_post_ids
+    return like_map
+  File "/usr/lib/python3.9/bdb.py", line 88, in trace_dispatch
+    return self.dispatch_line(frame)
+  File "/usr/lib/python3.9/bdb.py", line 112, in dispatch_line
+    self.user_line(frame)
+  File "/usr/lib/python3.9/pdb.py", line 262, in user_line
+    self.interaction(frame, None)
+  File "/usr/lib/python3.9/pdb.py", line 357, in interaction
+    self._cmdloop()
+  File "/usr/lib/python3.9/pdb.py", line 322, in _cmdloop
+    self.cmdloop()
+  File "/usr/lib/python3.9/cmd.py", line 126, in cmdloop
+    line = input(self.prompt)
+OSError: [Errno 9] Bad file descriptor
+{}
+> /root/logchat/services/likeService.py(18)get_likes_by_post_ids()
+-> return like_map
+(Pdb) INFO:     172.71.98.209:0 - "GET /feed/api/v1/jyguyg87 HTTP/1.1" 500 Internal Server Error
+ERROR:    Exception in ASGI application
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.9/dist-packages/uvicorn/protocols/http/h11_impl.py", line 408, in run_asgi
+    result = await app(  # type: ignore[func-returns-value]
+  File "/usr/local/lib/python3.9/dist-packages/uvicorn/middleware/proxy_headers.py", line 84, in __call__
+    return await self.app(scope, receive, send)
+  File "/usr/local/lib/python3.9/dist-packages/fastapi/applications.py", line 1106, in __call__
+    await super().__call__(scope, receive, send)
+  File "/usr/local/lib/python3.9/dist-packages/starlette/applications.py", line 122, in __call__
+    await self.middleware_stack(scope, receive, send)
+  File "/usr/local/lib/python3.9/dist-packages/starlette/middleware/errors.py", line 162, in __call__
+    await self.app(scope, receive, _send)
+  File "/usr/local/lib/python3.9/dist-packages/starlette/middleware/errors.py", line 162, in __call__
+    await self.app(scope, receive, _send)
+  File "/usr/local/lib/python3.9/dist-packages/starlette/middleware/cors.py", line 83, in __call__
+    await self.app(scope, receive, send)
+  File "/usr/local/lib/python3.9/dist-packages/starlette/middleware/exceptions.py", line 68, in __call__
+    await self.app(scope, receive, sender)
+  File "/usr/local/lib/python3.9/dist-packages/starlette/middleware/exceptions.py", line 68, in __call__
+    await self.app(scope, receive, sender)
+  File "/usr/local/lib/python3.9/dist-packages/fastapi/middleware/asyncexitstack.py", line 17, in __call__
+    await self.app(scope, receive, send)
+  File "/usr/local/lib/python3.9/dist-packages/fastapi/middleware/asyncexitstack.py", line 17, in __call__
+    await self.app(scope, receive, send)
+  File "/usr/local/lib/python3.9/dist-packages/starlette/routing.py", line 718, in __call__
+    await route.handle(scope, receive, send)
+  File "/usr/local/lib/python3.9/dist-packages/starlette/routing.py", line 276, in handle
+    await self.app(scope, receive, send)
+  File "/usr/local/lib/python3.9/dist-packages/starlette/routing.py", line 66, in app
+    response = await func(request)
+  File "/usr/local/lib/python3.9/dist-packages/fastapi/routing.py", line 274, in app
+    raw_response = await run_endpoint_function(
+  File "/usr/local/lib/python3.9/dist-packages/fastapi/routing.py", line 191, in run_endpoint_function
+    return await dependant.call(**values)
+  File "/root/logchat/controllers/feed.py", line 29, in get_user_timeline
+    user_posts = convert_to_str(feed_service.get_feed_for_user(user_id))
+  File "/root/logchat/services/FeedService.py", line 43, in get_feed_for_user
+    likes_map=self.likeService.get_likes_by_post_ids(post_ids)
+  File "/root/logchat/services/likeService.py", line 18, in get_likes_by_post_ids
+    return like_map
+  File "/root/logchat/services/likeService.py", line 18, in get_likes_by_post_ids
+    return like_map
+  File "/usr/lib/python3.9/bdb.py", line 88, in trace_dispatch
+    return self.dispatch_line(frame)
+  File "/usr/lib/python3.9/bdb.py", line 112, in dispatch_line
+    self.user_line(frame)
+  File "/usr/lib/python3.9/pdb.py", line 262, in user_line
+    self.interaction(frame, None)
+  File "/usr/lib/python3.9/pdb.py", line 357, in interaction
+    self._cmdloop()
+  File "/usr/lib/python3.9/pdb.py", line 322, in _cmdloop
+    self.cmdloop()
+  File "/usr/lib/python3.9/cmd.py", line 126, in cmdloop
+    line = input(self.prompt)
+OSError: [Errno 9] Bad file descriptor
+WARNING:  StatReload detected changes in 'services/likeService.py'. Reloading...
+INFO:     Shutting down
+INFO:     Waiting for application shutdown.
+INFO:     Application shutdown complete.
+INFO:     Finished server process [160000]
+INFO:     Started server process [160035]
+INFO:     Waiting for application startup.
+INFO:     Application startup complete.
+It's not a weekend.
+INFO:     172.71.98.208:0 - "GET /feed/api/v1/jyguyg87 HTTP/1.1" 200 OK
+INFO:     172.70.135.187:0 - "POST /api/login HTTP/1.1" 200 OK
+INFO:     172.70.34.143:0 - "POST /api/posts HTTP/1.1" 404 Not Found
+INFO:     172.70.135.197:0 - "POST /api/login HTTP/1.1" 200 OK
+INFO:     172.70.42.118:0 - "GET /feed/api/v1/121212 HTTP/1.1" 200 OK
+INFO:     172.70.38.236:0 - "POST /file HTTP/1.1" 422 Unprocessable Entity
+INFO:     172.70.39.185:0 - "POST /post/api/v1 HTTP/1.1" 307 Temporary Redirect
+INFO:     172.70.175.136:0 - "POST /post/api/v1 HTTP/1.1" 307 Temporary Redirect
+INFO:     108.162.246.7:0 - "GET / HTTP/1.1" 200 OK
+INFO:     146.19.24.28:57546 - "GET / HTTP/1.1" 200 OK
+INFO:     172.70.178.166:0 - "GET / HTTP/1.1" 200 OK
+INFO:     172.69.59.102:0 - "GET /favicon.ico HTTP/1.1" 404 Not Found
+INFO:     167.94.146.51:59442 - "GET / HTTP/1.1" 200 OK
+INFO:     167.94.146.51:56518 - "GET / HTTP/1.1" 200 OK
+INFO:     167.94.146.51:60414 - "PRI %2A HTTP/2.0" 404 Not Found
+WARNING:  Invalid HTTP request received.
+INFO:     167.94.146.51:37432 - "GET /favicon.ico HTTP/1.1" 404 Not Found
+INFO:     192.241.207.94:42824 - "GET / HTTP/1.1" 200 OK
+INFO:     146.19.24.28:58252 - "GET / HTTP/1.1" 200 OK
+INFO:     108.162.227.97:0 - "GET /wp-login.php HTTP/1.1" 404 Not Found
+INFO:     172.64.238.140:0 - "GET / HTTP/1.1" 200 OK
+INFO:     172.64.236.60:0 - "GET /favicon.ico HTTP/1.1" 404 Not Found
+INFO:     172.64.238.140:0 - "GET / HTTP/1.1" 200 OK
+INFO:     146.19.24.28:54728 - "GET / HTTP/1.1" 200 OK
+INFO:     172.71.218.68:0 - "GET / HTTP/1.1" 200 OK
+INFO:     172.68.118.167:0 - "GET /favicon.ico HTTP/1.1" 404 Not Found
+WARNING:  Invalid HTTP request received.
+INFO:     172.71.150.223:0 - "GET / HTTP/1.1" 200 OK
+INFO:     172.71.214.205:0 - "GET / HTTP/1.1" 200 OK
+INFO:     162.158.114.55:0 - "GET /favicon.ico HTTP/1.1" 404 Not Found
+INFO:     172.69.6.98:0 - "GET / HTTP/1.1" 200 OK
+INFO:     172.69.59.101:0 - "GET /favicon.ico HTTP/1.1" 404 Not Found
+INFO:     209.141.42.209:38534 - "GET / HTTP/1.1" 200 OK
+INFO:     172.68.10.43:0 - "GET / HTTP/1.1" 200 OK
+INFO:     172.68.11.182:0 - "GET /favicon.ico HTTP/1.1" 404 Not Found
+INFO:     162.158.178.134:0 - "GET / HTTP/1.1" 200 OK
+WARNING:  Invalid HTTP request received.
+INFO:     146.19.24.28:52552 - "GET / HTTP/1.1" 200 OK
+INFO:     162.142.125.222:50250 - "GET / HTTP/1.1" 200 OK
+INFO:     162.142.125.222:33032 - "GET / HTTP/1.1" 200 OK
+INFO:     162.142.125.222:41408 - "PRI %2A HTTP/2.0" 404 Not Found
+WARNING:  Invalid HTTP request received.
+INFO:     162.142.125.222:38332 - "GET /favicon.ico HTTP/1.1" 404 Not Found
+INFO:     23.224.144.165:53320 - "GET /manager/html HTTP/1.1" 404 Not Found
+INFO:     185.36.81.40:34836 - "CONNECT google.com%3A443 HTTP/1.1" 404 Not Found
+INFO:     146.19.24.28:50600 - "GET / HTTP/1.1" 200 OK
+INFO:     65.49.1.21:49651 - "GET / HTTP/1.1" 200 OK
+INFO:     65.49.1.20:19941 - "GET /favicon.ico HTTP/1.1" 404 Not Found
+INFO:     65.49.1.20:14513 - "GET http%3A//api.ipify.org/?format=json HTTP/1.1" 404 Not Found
+INFO:     65.49.1.14:40663 - "CONNECT www.shadowserver.org%3A443 HTTP/1.1" 404 Not Found
+WARNING:  Invalid HTTP request received.
+INFO:     107.170.253.38:49044 - "GET / HTTP/1.1" 200 OK
+INFO:     198.235.24.143:61458 - "GET / HTTP/1.1" 200 OK
+INFO:     146.19.24.28:38830 - "GET / HTTP/1.1" 200 OK
+INFO:     205.210.31.97:54281 - "GET / HTTP/1.0" 200 OK
+INFO:     185.36.81.40:44166 - "CONNECT google.com%3A443 HTTP/1.1" 404 Not Found
+INFO:     167.94.145.54:46864 - "GET / HTTP/1.1" 200 OK
+INFO:     167.94.145.54:41634 - "GET / HTTP/1.1" 200 OK
+INFO:     167.94.145.54:48222 - "PRI %2A HTTP/2.0" 404 Not Found
+WARNING:  Invalid HTTP request received.
+INFO:     167.94.145.54:51992 - "GET /favicon.ico HTTP/1.1" 404 Not Found
+INFO:     172.71.150.147:0 - "GET / HTTP/1.1" 200 OK
+INFO:     172.70.207.154:0 - "GET / HTTP/1.1" 200 OK
+INFO:     146.19.24.28:56262 - "GET / HTTP/1.1" 200 OK
+INFO:     104.206.128.58:63234 - "GET / HTTP/1.1" 200 OK
+INFO:     199.45.154.65:59730 - "GET / HTTP/1.1" 200 OK
+INFO:     199.45.154.65:59834 - "GET / HTTP/1.1" 200 OK
+INFO:     199.45.154.65:59860 - "PRI %2A HTTP/2.0" 404 Not Found
+WARNING:  Invalid HTTP request received.
+INFO:     199.45.154.65:59878 - "GET /favicon.ico HTTP/1.1" 404 Not Found
+INFO:     172.71.150.154:0 - "GET / HTTP/1.1" 200 OK
+INFO:     172.68.18.161:28472 - "GET / HTTP/1.1" 200 OK
+INFO:     172.70.39.177:0 - "GET / HTTP/1.1" 200 OK
+INFO:     172.69.23.137:0 - "GET / HTTP/1.1" 200 OK
+INFO:     172.71.155.5:0 - "GET / HTTP/1.1" 200 OK
+INFO:     172.71.159.56:0 - "GET / HTTP/1.1" 200 OK
+INFO:     172.71.155.7:0 - "GET /Public/home/js/check.js HTTP/1.1" 404 Not Found
+INFO:     172.71.158.212:0 - "GET /Public/home/js/check.js HTTP/1.1" 404 Not Found
+INFO:     172.71.158.157:0 - "GET /static/admin/javascript/hetong.js HTTP/1.1" 404 Not Found
+INFO:     167.248.133.53:35274 - "GET / HTTP/1.1" 200 OK
+INFO:     167.248.133.53:43524 - "GET / HTTP/1.1" 200 OK
+INFO:     167.248.133.53:40420 - "PRI %2A HTTP/2.0" 404 Not Found
+WARNING:  Invalid HTTP request received.
+INFO:     167.248.133.53:36748 - "GET /favicon.ico HTTP/1.1" 404 Not Found
+INFO:     71.6.165.200:60692 - "GET / HTTP/1.1" 200 OK
+INFO:     71.6.165.200:32818 - "GET /favicon.ico HTTP/1.1" 404 Not Found
+INFO:     146.19.24.28:47598 - "GET / HTTP/1.1" 200 OK
+INFO:     78.108.177.50:37974 - "GET / HTTP/1.0" 200 OK
+INFO:     209.141.40.117:51104 - "GET / HTTP/1.1" 200 OK
+INFO:     83.97.73.245:50424 - "GET /?XDEBUG_SESSION_START=phpstorm HTTP/1.1" 200 OK
+INFO:     172.70.39.53:0 - "POST /api/login HTTP/1.1" 200 OK
+INFO:     172.70.134.18:0 - "POST /api/login HTTP/1.1" 200 OK
+INFO:     172.70.42.54:0 - "GET /api/profile/658a5a5b6c4210f526e88fb0 HTTP/1.1" 404 Not Found
+INFO:     95.214.27.12:50104 - "GET /manager/html HTTP/1.1" 404 Not Found
+INFO:     95.214.27.12:50150 - "GET /manager/html HTTP/1.1" 404 Not Found
+INFO:     95.214.27.12:57410 - "GET /manager/html HTTP/1.1" 404 Not Found
+INFO:     95.214.27.12:51054 - "GET /manager/html HTTP/1.1" 404 Not Found
+INFO:     95.214.27.12:43022 - "GET /manager/html HTTP/1.1" 404 Not Found
+INFO:     95.214.27.12:49362 - "GET /manager/html HTTP/1.1" 404 Not Found
+INFO:     95.214.27.12:40646 - "GET /manager/html HTTP/1.1" 404 Not Found
+INFO:     95.214.27.12:44704 - "GET /manager/html HTTP/1.1" 404 Not Found
+INFO:     95.214.27.12:38712 - "GET /manager/html HTTP/1.1" 404 Not Found
+INFO:     95.214.27.12:33114 - "GET /manager/html HTTP/1.1" 404 Not Found
+INFO:     95.214.27.12:59246 - "GET /manager/html HTTP/1.1" 404 Not Found
+INFO:     95.214.27.12:55958 - "GET /manager/html HTTP/1.1" 404 Not Found
+INFO:     95.214.27.12:49278 - "GET /manager/html HTTP/1.1" 404 Not Found
+INFO:     95.214.27.12:58882 - "GET /manager/html HTTP/1.1" 404 Not Found
+INFO:     95.214.27.12:47872 - "GET /manager/html HTTP/1.1" 404 Not Found
+INFO:     95.214.27.12:49886 - "GET /manager/html HTTP/1.1" 404 Not Found
+INFO:     83.97.73.245:59482 - "GET /actuator/gateway/routes HTTP/1.1" 404 Not Found
+INFO:     95.214.27.12:40246 - "GET /manager/html HTTP/1.1" 404 Not Found
+INFO:     95.214.27.12:58702 - "GET /manager/html HTTP/1.1" 404 Not Found
+INFO:     95.214.27.12:52524 - "GET /manager/html HTTP/1.1" 404 Not Found
+INFO:     95.214.27.12:35874 - "GET /manager/html HTTP/1.1" 404 Not Found
+INFO:     95.214.27.12:50706 - "GET /manager/html HTTP/1.1" 404 Not Found
+INFO:     95.214.27.12:50300 - "GET /manager/html HTTP/1.1" 404 Not Found
+WARNING:  Invalid HTTP request received.
+INFO:     170.130.204.10:63402 - "GET / HTTP/1.1" 200 OK
+INFO:     146.19.24.28:35498 - "GET / HTTP/1.1" 200 OK
+INFO:     172.71.102.116:0 - "POST /api/login HTTP/1.1" 200 OK
+INFO:     172.71.98.237:0 - "POST /api/login HTTP/1.1" 200 OK
+INFO:     46.174.191.28:38364 - "GET / HTTP/1.0" 200 OK
+INFO:     172.71.102.42:0 - "POST /api/login HTTP/1.1" 200 OK
+INFO:     172.71.122.141:0 - "POST /api/login HTTP/1.1" 200 OK
+INFO:     162.158.170.141:0 - "GET / HTTP/1.1" 200 OK
+INFO:     69.164.217.245:56193 - "GET / HTTP/1.1" 200 OK
+WARNING:  Invalid HTTP request received.
+INFO:     141.98.7.181:41274 - "GET /manager/html HTTP/1.1" 404 Not Found
+ERROR:    Exception in ASGI application
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.9/dist-packages/uvicorn/protocols/http/h11_impl.py", line 408, in run_asgi
+    result = await app(  # type: ignore[func-returns-value]
+  File "/usr/local/lib/python3.9/dist-packages/uvicorn/middleware/proxy_headers.py", line 84, in __call__
+    return await self.app(scope, receive, send)
+  File "/usr/local/lib/python3.9/dist-packages/fastapi/applications.py", line 1106, in __call__
+    await super().__call__(scope, receive, send)
+  File "/usr/local/lib/python3.9/dist-packages/starlette/applications.py", line 122, in __call__
+    await self.middleware_stack(scope, receive, send)
+  File "/usr/local/lib/python3.9/dist-packages/starlette/middleware/errors.py", line 184, in __call__
+    raise exc
+  File "/usr/local/lib/python3.9/dist-packages/starlette/middleware/errors.py", line 162, in __call__
+    await self.app(scope, receive, _send)
+  File "/usr/local/lib/python3.9/dist-packages/starlette/middleware/cors.py", line 83, in __call__
+    await self.app(scope, receive, send)
+  File "/usr/local/lib/python3.9/dist-packages/starlette/middleware/exceptions.py", line 91, in __call__
+    await response(scope, receive, sender)
+  File "/usr/local/lib/python3.9/dist-packages/starlette/responses.py", line 164, in __call__
+    await send(
+  File "/usr/local/lib/python3.9/dist-packages/starlette/middleware/exceptions.py", line 65, in sender
+    await send(message)
+  File "/usr/local/lib/python3.9/dist-packages/starlette/middleware/errors.py", line 159, in _send
+    await send(message)
+  File "/usr/local/lib/python3.9/dist-packages/uvicorn/protocols/http/h11_impl.py", line 490, in send
+    output = self.conn.send(event=response)
+  File "/usr/local/lib/python3.9/dist-packages/h11/_connection.py", line 512, in send
+    data_list = self.send_with_data_passthrough(event)
+  File "/usr/local/lib/python3.9/dist-packages/h11/_connection.py", line 537, in send_with_data_passthrough
+    self._process_event(self.our_role, event)
+  File "/usr/local/lib/python3.9/dist-packages/h11/_connection.py", line 272, in _process_event
+    self._cstate.process_event(role, type(event), server_switch_event)
+  File "/usr/local/lib/python3.9/dist-packages/h11/_state.py", line 293, in process_event
+    self._fire_event_triggered_transitions(role, _event_type)
+  File "/usr/local/lib/python3.9/dist-packages/h11/_state.py", line 311, in _fire_event_triggered_transitions
+    raise LocalProtocolError(
+h11._util.LocalProtocolError: can't handle event type Response when role=SERVER and state=MUST_CLOSE
+WARNING:  Invalid HTTP request received.
+INFO:     50.3.85.22:57818 - "GET / HTTP/1.1" 200 OK
+INFO:     146.19.24.28:52968 - "GET / HTTP/1.1" 200 OK
+WARNING:  Invalid HTTP request received.
+INFO:     141.101.68.199:53498 - "GET / HTTP/1.1" 200 OK
+INFO:     141.101.69.38:0 - "HEAD / HTTP/1.1" 405 Method Not Allowed
+INFO:     146.19.24.28:40920 - "GET / HTTP/1.1" 200 OK
+INFO:     108.162.245.51:0 - "GET / HTTP/1.1" 200 OK
+INFO:     172.71.142.136:0 - "GET / HTTP/1.1" 200 OK
+INFO:     172.104.11.34:36282 - "GET / HTTP/1.1" 200 OK
+INFO:     172.68.85.134:0 - "GET / HTTP/1.1" 200 OK
+INFO:     146.19.24.28:47214 - "GET / HTTP/1.1" 200 OK
+INFO:     162.158.22.180:0 - "POST /api/login HTTP/1.1" 200 OK
+INFO:     172.70.174.139:0 - "POST /api/login HTTP/1.1" 200 OK
+INFO:     162.158.78.175:0 - "GET /feed/api/v1/121212 HTTP/1.1" 200 OK
+INFO:     172.71.222.253:0 - "POST /api/login HTTP/1.1" 200 OK
+INFO:     162.158.22.212:0 - "POST /api/login HTTP/1.1" 200 OK
+INFO:     172.71.186.110:0 - "POST /api/login HTTP/1.1" 200 OK
+INFO:     162.158.22.146:0 - "POST /api/login HTTP/1.1" 200 OK
+INFO:     162.158.22.146:0 - "POST /api/login HTTP/1.1" 200 OK
+INFO:     172.70.175.85:0 - "POST /post/api/v1 HTTP/1.1" 307 Temporary Redirect
+INFO:     172.70.175.85:0 - "POST /post/api/v1 HTTP/1.1" 307 Temporary Redirect
+INFO:     172.70.175.45:0 - "POST /post/api/v1 HTTP/1.1" 307 Temporary Redirect
+INFO:     172.71.222.240:0 - "POST /file HTTP/1.1" 200 OK
+WARNING:  Invalid HTTP request received.
+INFO:     172.70.39.140:0 - "GET /file/sBZfjUBPGof6F644_8b6v6y.jpg HTTP/1.1" 200 OK
+INFO:     172.71.102.61:0 - "GET /file/sBZfjUBPGof6F644_8b6v6y.jpg HTTP/1.1" 200 OK
+INFO:     172.71.103.30:0 - "GET /favicon.ico HTTP/1.1" 404 Not Found
+INFO:     172.71.103.234:0 - "GET /file/K90PWlgI1ySVeAqt_google.png HTTP/1.1" 200 OK
+INFO:     172.71.103.223:0 - "GET /file/w342324.png HTTP/1.1" 200 OK
+INFO:     209.141.42.209:47162 - "GET / HTTP/1.1" 200 OK
+INFO:     172.68.19.177:0 - "GET / HTTP/1.1" 200 OK
+INFO:     185.180.143.141:59276 - "GET /admin/ HTTP/1.1" 404 Not Found
+INFO:     185.180.143.141:59292 - "GET / HTTP/1.1" 200 OK
+INFO:     185.180.143.141:40382 - "GET /showLogin.cc HTTP/1.1" 404 Not Found
+INFO:     185.180.143.141:49220 - "GET / HTTP/1.1" 200 OK
+INFO:     185.180.143.141:49234 - "GET / HTTP/1.1" 200 OK
+INFO:     185.180.143.141:49256 - "GET /favicon.ico HTTP/1.1" 404 Not Found
+INFO:     185.180.143.141:57528 - "GET /Telerik.Web.UI.WebResource.axd?type=rau HTTP/1.1" 404 Not Found
+INFO:     185.180.143.141:37558 - "GET /cgi-bin/authLogin.cgi HTTP/1.1" 404 Not Found
+INFO:     185.180.143.141:45720 - "GET / HTTP/1.1" 200 OK
+INFO:     185.180.143.141:45744 - "GET /login HTTP/1.1" 404 Not Found
+INFO:     185.180.143.141:54618 - "GET / HTTP/1.1" 200 OK
+INFO:     185.180.143.141:54644 - "GET /webfig/ HTTP/1.1" 404 Not Found
+INFO:     185.180.143.141:34784 - "GET /api/session/properties HTTP/1.1" 404 Not Found
+INFO:     185.180.143.141:44124 - "GET /static/historypage.js HTTP/1.1" 404 Not Found
+INFO:     185.180.143.141:53852 - "GET /favicon.ico HTTP/1.1" 404 Not Found
+INFO:     172.71.98.12:0 - "GET / HTTP/1.1" 200 OK
+INFO:     172.71.98.106:0 - "GET / HTTP/1.1" 200 OK
+INFO:     162.158.155.148:0 - "POST /post/api/v1 HTTP/1.1" 307 Temporary Redirect
+INFO:     162.158.159.137:0 - "POST /post/api/v1 HTTP/1.1" 307 Temporary Redirect
+INFO:     162.158.159.137:0 - "POST /post/api/v1/ HTTP/1.1" 200 OK
+INFO:     172.71.118.165:0 - "GET /feed/api/v1/jyguyg87 HTTP/1.1" 200 OK
+INFO:     172.70.135.151:0 - "POST /post/api/v1 HTTP/1.1" 307 Temporary Redirect
+INFO:     172.70.43.151:0 - "POST /post/api/v1 HTTP/1.1" 307 Temporary Redirect
+INFO:     172.70.174.139:0 - "POST /post/api/v1 HTTP/1.1" 307 Temporary Redirect
+INFO:     172.70.135.146:0 - "POST /post/api/v1 HTTP/1.1" 307 Temporary Redirect
+INFO:     172.70.175.185:0 - "POST /post/api/v1 HTTP/1.1" 307 Temporary Redirect
+INFO:     172.70.38.92:0 - "POST /post/api/v1 HTTP/1.1" 307 Temporary Redirect
+INFO:     172.70.34.137:0 - "POST /post/api/v1 HTTP/1.1" 307 Temporary Redirect
+INFO:     172.71.223.176:0 - "POST /post/api/v1 HTTP/1.1" 307 Temporary Redirect
+INFO:     190.198.29.24:42893 - "GET / HTTP/1.1" 200 OK
+INFO:     172.70.43.153:0 - "POST /post/api/v1 HTTP/1.1" 307 Temporary Redirect
+INFO:     172.70.38.17:0 - "POST /post/api/v1 HTTP/1.1" 307 Temporary Redirect
+INFO:     172.70.38.17:0 - "POST /post/api/v1/ HTTP/1.1" 200 OK
+INFO:     205.210.31.64:50499 - "GET / HTTP/1.0" 200 OK
+INFO:     78.108.177.54:37974 - "GET / HTTP/1.0" 200 OK
+INFO:     146.19.24.28:55368 - "GET / HTTP/1.1" 200 OK
+WARNING:  Invalid HTTP request received.
+INFO:     172.64.236.9:0 - "GET / HTTP/1.1" 200 OK
+INFO:     172.64.236.61:0 - "GET /favicon.ico HTTP/1.1" 404 Not Found
+INFO:     172.64.238.86:0 - "GET / HTTP/1.1" 200 OK
+INFO:     172.69.22.133:0 - "GET / HTTP/1.1" 200 OK
+INFO:     172.71.159.40:0 - "GET / HTTP/1.1" 200 OK
+INFO:     162.158.78.205:0 - "GET /api/username/check/170356989894a0asa%20abhish HTTP/1.1" 404 Not Found
+INFO:     172.70.42.54:0 - "GET /api/username/check/170356989894a0asa%20abhish HTTP/1.1" 404 Not Found
+INFO:     172.71.223.66:0 - "GET /api/username/check/170356989894a0asa%20abhish HTTP/1.1" 404 Not Found
+INFO:     172.71.151.164:0 - "GET / HTTP/1.1" 200 OK
+INFO:     172.71.134.119:0 - "GET / HTTP/1.1" 200 OK
+INFO:     172.71.99.196:0 - "POST /xmlrpc.php HTTP/1.1" 404 Not Found
+INFO:     172.70.114.141:0 - "POST /wordpress/xmlrpc.php HTTP/1.1" 404 Not Found
+INFO:     172.70.114.215:0 - "POST /wp/xmlrpc.php HTTP/1.1" 404 Not Found
+INFO:     162.158.158.254:0 - "GET / HTTP/1.1" 200 OK
+INFO:     172.70.134.19:0 - "GET /wp-login.php HTTP/1.1" 404 Not Found
+INFO:     172.71.126.61:0 - "GET /wp-admin/ HTTP/1.1" 404 Not Found
+INFO:     172.69.223.51:0 - "GET /login HTTP/1.1" 404 Not Found
+INFO:     172.71.215.105:0 - "GET / HTTP/1.1" 200 OK
+INFO:     162.158.179.125:0 - "GET / HTTP/1.1" 200 OK
+INFO:     172.71.218.81:0 - "GET / HTTP/1.1" 200 OK
+INFO:     172.68.225.77:0 - "GET / HTTP/1.1" 200 OK
+WARNING:  Invalid HTTP request received.
+INFO:     146.19.24.28:57246 - "GET / HTTP/1.1" 200 OK
+INFO:     172.68.18.217:54594 - "GET / HTTP/1.1" 200 OK
+INFO:     172.69.223.39:0 - "GET / HTTP/1.1" 200 OK
+INFO:     162.243.150.39:42734 - "GET /hudson HTTP/1.1" 404 Not Found
+WARNING:  Invalid HTTP request received.
+INFO:     87.121.69.25:49700 - "CONNECT google.com%3A443 HTTP/1.1" 404 Not Found
+INFO:     146.19.24.28:47450 - "GET / HTTP/1.1" 200 OK
+INFO:     192.241.237.51:60908 - "GET /actuator/health HTTP/1.1" 404 Not Found
+INFO:     209.141.40.117:46422 - "GET / HTTP/1.1" 200 OK
+INFO:     141.101.105.25:0 - "GET /.env HTTP/1.1" 404 Not Found
+WARNING:  Invalid HTTP request received.
+WARNING:  Invalid HTTP request received.
+WARNING:  Invalid HTTP request received.
+INFO:     104.140.148.106:64690 - "GET / HTTP/1.1" 200 OK
+INFO:     87.121.69.25:37312 - "CONNECT google.com%3A443 HTTP/1.1" 404 Not Found
+WARNING:  Invalid HTTP request received.
+INFO:     141.98.7.181:55564 - "GET /manager/html HTTP/1.1" 404 Not Found
+ERROR:    Exception in ASGI application
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.9/dist-packages/uvicorn/protocols/http/h11_impl.py", line 408, in run_asgi
+    result = await app(  # type: ignore[func-returns-value]
+  File "/usr/local/lib/python3.9/dist-packages/uvicorn/middleware/proxy_headers.py", line 84, in __call__
+    return await self.app(scope, receive, send)
+  File "/usr/local/lib/python3.9/dist-packages/fastapi/applications.py", line 1106, in __call__
+    await super().__call__(scope, receive, send)
+  File "/usr/local/lib/python3.9/dist-packages/starlette/applications.py", line 122, in __call__
+    await self.middleware_stack(scope, receive, send)
+  File "/usr/local/lib/python3.9/dist-packages/starlette/middleware/errors.py", line 184, in __call__
+    raise exc
+  File "/usr/local/lib/python3.9/dist-packages/starlette/middleware/errors.py", line 162, in __call__
+    await self.app(scope, receive, _send)
+  File "/usr/local/lib/python3.9/dist-packages/starlette/middleware/cors.py", line 83, in __call__
+    await self.app(scope, receive, send)
+  File "/usr/local/lib/python3.9/dist-packages/starlette/middleware/exceptions.py", line 91, in __call__
+    await response(scope, receive, sender)
+  File "/usr/local/lib/python3.9/dist-packages/starlette/responses.py", line 164, in __call__
+    await send(
+  File "/usr/local/lib/python3.9/dist-packages/starlette/middleware/exceptions.py", line 65, in sender
+    await send(message)
+  File "/usr/local/lib/python3.9/dist-packages/starlette/middleware/errors.py", line 159, in _send
+    await send(message)
+  File "/usr/local/lib/python3.9/dist-packages/uvicorn/protocols/http/h11_impl.py", line 490, in send
+    output = self.conn.send(event=response)
+  File "/usr/local/lib/python3.9/dist-packages/h11/_connection.py", line 512, in send
+    data_list = self.send_with_data_passthrough(event)
+  File "/usr/local/lib/python3.9/dist-packages/h11/_connection.py", line 537, in send_with_data_passthrough
+    self._process_event(self.our_role, event)
+  File "/usr/local/lib/python3.9/dist-packages/h11/_connection.py", line 272, in _process_event
+    self._cstate.process_event(role, type(event), server_switch_event)
+  File "/usr/local/lib/python3.9/dist-packages/h11/_state.py", line 293, in process_event
+    self._fire_event_triggered_transitions(role, _event_type)
+  File "/usr/local/lib/python3.9/dist-packages/h11/_state.py", line 311, in _fire_event_triggered_transitions
+    raise LocalProtocolError(
+h11._util.LocalProtocolError: can't handle event type Response when role=SERVER and state=MUST_CLOSE
+INFO:     170.130.187.26:64140 - "GET / HTTP/1.1" 200 OK
+INFO:     104.140.188.6:59152 - "GET / HTTP/1.1" 200 OK
+INFO:     146.19.24.28:47028 - "GET / HTTP/1.1" 200 OK
+INFO:     162.158.159.234:0 - "GET / HTTP/1.1" 200 OK
+INFO:     162.158.63.145:0 - "GET /robots.txt HTTP/1.1" 404 Not Found
+INFO:     162.158.158.127:0 - "GET / HTTP/1.1" 200 OK
+INFO:     172.70.143.172:0 - "GET /wp-json/?rest_route=/wp/v2/users/ HTTP/1.1" 404 Not Found
+INFO:     45.131.108.31:46560 - "CONNECT httpbin.org%3A443 HTTP/1.1" 404 Not Found
+INFO:     65.49.1.77:42555 - "GET / HTTP/1.1" 200 OK
+INFO:     65.49.1.67:23099 - "GET /favicon.ico HTTP/1.1" 404 Not Found
+INFO:     65.49.1.68:7975 - "GET http%3A//api.ipify.org/?format=json HTTP/1.1" 404 Not Found
+INFO:     65.49.1.70:33175 - "CONNECT www.shadowserver.org%3A443 HTTP/1.1" 404 Not Found
+INFO:     94.103.124.45:44966 - "CONNECT google.com%3A443 HTTP/1.1" 404 Not Found
+WARNING:  Invalid HTTP request received.
+INFO:     104.140.148.98:59852 - "GET / HTTP/1.1" 200 OK
+INFO:     46.174.191.29:38364 - "GET / HTTP/1.0" 200 OK
+INFO:     172.71.10.15:31232 - "GET / HTTP/1.1" 200 OK
+INFO:     162.158.19.112:0 - "GET /https%3A/adsensetalk.online/ HTTP/1.1" 404 Not Found
+INFO:     167.248.133.33:40616 - "GET / HTTP/1.1" 200 OK
+INFO:     167.248.133.33:59932 - "GET / HTTP/1.1" 200 OK
+INFO:     167.248.133.33:42320 - "PRI %2A HTTP/2.0" 404 Not Found
+WARNING:  Invalid HTTP request received.
+INFO:     167.248.133.33:40976 - "GET /favicon.ico HTTP/1.1" 404 Not Found
+INFO:     172.71.147.139:0 - "GET / HTTP/1.1" 200 OK
+INFO:     185.36.81.40:57080 - "CONNECT google.com%3A443 HTTP/1.1" 404 Not Found
+INFO:     146.19.24.28:55892 - "GET / HTTP/1.1" 200 OK
+WARNING:  Invalid HTTP request received.
+WARNING:  Invalid HTTP request received.
+INFO:     172.71.218.115:0 - "GET / HTTP/1.1" 200 OK
+INFO:     162.158.114.182:0 - "GET /sitemap.xml HTTP/1.1" 404 Not Found
+INFO:     172.71.214.222:0 - "GET /robots.txt HTTP/1.1" 404 Not Found
+INFO:     146.19.24.28:34320 - "GET / HTTP/1.1" 200 OK
+INFO:     172.70.110.190:0 - "GET /robots.txt HTTP/1.1" 404 Not Found
+INFO:     159.89.239.252:28607 - "GET / HTTP/1.1" 200 OK
+WARNING:  Invalid HTTP request received.
+INFO:     172.71.223.194:0 - "POST /like/api/v1/post/65e098f7d436660c0c0ed6b6 HTTP/1.1" 307 Temporary Redirect
+INFO:     172.70.134.19:0 - "POST /like/api/v1/post/65e098f7d436660c0c0ed6b6 HTTP/1.1" 307 Temporary Redirect
+INFO:     172.70.34.104:0 - "POST /like/api/v1/post/65e098f7d436660c0c0ed6b6/ HTTP/1.1" 200 OK
+INFO:     198.235.24.44:64918 - "GET / HTTP/1.1" 200 OK
+INFO:     162.216.149.54:59768 - "GET / HTTP/1.1" 200 OK
+INFO:     195.136.206.217:39295 - "GET / HTTP/1.1" 200 OK
+WARNING:  Invalid HTTP request received.
+INFO:     162.158.22.180:0 - "GET /api/v1/65e1e5abf8d360c09c02aaf9 HTTP/1.1" 404 Not Found
+INFO:     172.70.39.57:0 - "GET /feed/api/v1/121212https%3A/slogger.live/api/v1/65e1e5abf8d360c09c02aaf9 HTTP/1.1" 404 Not Found
+INFO:     172.70.175.46:0 - "GET /feed/api/v165e1e5abf8d360c09c02aaf9 HTTP/1.1" 404 Not Found
+INFO:     172.70.35.82:0 - "GET /feed/api/v165e1e5abf8d360c09c02aaf9 HTTP/1.1" 404 Not Found
+INFO:     172.70.174.139:0 - "GET /feed/api/v1/65e1e5abf8d360c09c02aaf9 HTTP/1.1" 200 OK
+INFO:     162.158.22.115:0 - "GET /feed/api/v1/65e1e5abf8d360c09c02aaf9 HTTP/1.1" 200 OK
+INFO:     172.70.174.221:0 - "GET /feed/api/v1/65e1e5abf8d360c09c02aaf9 HTTP/1.1" 200 OK
+INFO:     172.71.186.225:0 - "GET /feed/api/v1/65e1e5abf8d360c09c02aaf9 HTTP/1.1" 200 OK
+INFO:     162.158.23.64:0 - "GET /feed/api/v1/65e1e5abf8d360c09c02aaf9 HTTP/1.1" 200 OK
+INFO:     162.158.22.212:0 - "GET /feed/api/v1/65e1e5abf8d360c09c02aaf9 HTTP/1.1" 200 OK
+INFO:     162.158.22.213:0 - "GET /feed/api/v1/65e1e5abf8d360c09c02aaf9 HTTP/1.1" 200 OK
+INFO:     162.158.22.213:0 - "GET /feed/api/v1/65e1e5abf8d360c09c02aaf9 HTTP/1.1" 200 OK
+INFO:     162.158.23.35:0 - "GET /feed/api/v1/65e1e5abf8d360c09c02aaf9 HTTP/1.1" 200 OK
+INFO:     172.70.34.117:0 - "GET /feed/api/v1/65e1e5abf8d360c09c02aaf9 HTTP/1.1" 200 OK
+INFO:     35.240.121.17:35836 - "GET / HTTP/1.1" 200 OK
+INFO:     172.71.222.203:0 - "GET /feed/api/v1/65e1e5abf8d360c09c02aaf9 HTTP/1.1" 200 OK
+INFO:     185.191.126.213:39484 - "GET / HTTP/1.1" 200 OK
+INFO:     172.71.222.203:0 - "GET /feed/api/v1/65e1e5abf8d360c09c02aaf9 HTTP/1.1" 200 OK
+INFO:     172.70.42.54:0 - "GET /feed/api/v1/65e1e5abf8d360c09c02aaf9 HTTP/1.1" 200 OK
+INFO:     172.71.122.140:0 - "GET / HTTP/1.1" 200 OK
+INFO:     146.19.24.28:43600 - "GET / HTTP/1.1" 200 OK
+INFO:     172.71.186.110:0 - "GET /feed/api/v1/65e1e5abf8d360c09c02aaf9 HTTP/1.1" 200 OK
+INFO:     78.108.177.51:37974 - "GET / HTTP/1.0" 200 OK
+INFO:     172.71.186.35:0 - "GET /feed/api/v1/65e1e5abf8d360c09c02aaf9 HTTP/1.1" 200 OK
+INFO:     172.70.175.73:0 - "GET /feed/api/v1/65e1e5abf8d360c09c02aaf9 HTTP/1.1" 200 OK
+INFO:     87.121.69.25:58082 - "CONNECT google.com%3A443 HTTP/1.1" 404 Not Found
+INFO:     172.71.186.173:0 - "GET /feed/api/v1/65e1e5abf8d360c09c02aaf9 HTTP/1.1" 200 OK
+INFO:     172.71.186.172:0 - "GET /feed/api/v1/65e1e5abf8d360c09c02aaf9 HTTP/1.1" 200 OK
+INFO:     167.94.146.51:49858 - "GET / HTTP/1.1" 200 OK
+INFO:     167.94.146.51:35206 - "GET / HTTP/1.1" 200 OK
+INFO:     167.94.146.51:42292 - "PRI %2A HTTP/2.0" 404 Not Found
+WARNING:  Invalid HTTP request received.
+INFO:     167.94.146.51:52610 - "GET /favicon.ico HTTP/1.1" 404 Not Found
+INFO:     120.211.101.25:57536 - "GET /boaform/admin/formLogin?username=user&psd=user HTTP/1.0" 404 Not Found
+INFO:     69.164.217.74:58685 - "GET / HTTP/1.1" 200 OK
+INFO:     141.101.84.63:0 - "GET / HTTP/1.1" 200 OK
+INFO:     172.70.174.167:0 - "GET /feed/api/v1/65e1e5abf8d360c09c02aaf9 HTTP/1.1" 200 OK
+INFO:     162.158.22.147:0 - "GET /feed/api/v1/65e1e5abf8d360c09c02aaf9 HTTP/1.1" 200 OK
+INFO:     162.158.22.114:0 - "GET /feed/api/v1/65e1e5abf8d360c09c02aaf9 HTTP/1.1" 200 OK
+INFO:     162.158.22.115:0 - "GET /feed/api/v1/65e1e5abf8d360c09c02aaf9 HTTP/1.1" 200 OK
+INFO:     162.158.22.115:0 - "GET /feed/api/v1/65e1e5abf8d360c09c02aaf9 HTTP/1.1" 200 OK
+INFO:     162.158.22.115:0 - "GET /feed/api/v1/65e1e5abf8d360c09c02aaf9 HTTP/1.1" 200 OK
+INFO:     146.19.24.28:58638 - "GET / HTTP/1.1" 200 OK
+INFO:     172.71.150.74:0 - "GET / HTTP/1.1" 200 OK
+INFO:     172.69.235.136:0 - "GET / HTTP/1.1" 200 OK
+INFO:     162.158.182.254:0 - "GET /favicon.ico HTTP/1.1" 404 Not Found
+INFO:     172.71.142.153:0 - "GET / HTTP/1.1" 200 OK
+INFO:     192.241.232.40:41634 - "GET / HTTP/1.1" 200 OK
+INFO:     45.128.232.211:59384 - "GET http%3A//azenv.net/ HTTP/1.1" 404 Not Found
+WARNING:  Invalid HTTP request received.
+INFO:     45.132.174.165:60318 - "GET / HTTP/1.1" 200 OK
+INFO:     172.70.223.37:0 - "GET /wp-login.php HTTP/1.1" 404 Not Found
+INFO:     104.236.128.34:55002 - "GET /cgi-bin/login HTTP/1.1" 404 Not Found
+INFO:     172.71.186.111:0 - "GET /feed/api/v1/65e1e5abf8d360c09c02aaf9 HTTP/1.1" 200 OK
+INFO:     172.71.186.110:0 - "GET /feed/api/v1/65e1e5abf8d360c09c02aaf9 HTTP/1.1" 200 OK
+INFO:     172.70.175.130:0 - "GET /feed/api/v1/65e1e5abf8d360c09c02aaf9 HTTP/1.1" 200 OK
+INFO:     141.101.69.21:0 - "GET /feed/api/v1/65e1e5abf8d360c09c02aaf9 HTTP/1.1" 200 OK
+INFO:     162.158.23.36:0 - "GET /feed/api/v1/65e1e5abf8d360c09c02aaf9 HTTP/1.1" 200 OK
+INFO:     162.158.22.88:0 - "GET /feed/api/v1/65e1e5abf8d360c09c02aaf9 HTTP/1.1" 200 OK
+INFO:     162.158.23.35:0 - "GET /feed/api/v1/65e1e5abf8d360c09c02aaf9 HTTP/1.1" 200 OK
+INFO:     172.71.186.172:0 - "GET /feed/api/v1/65e1e5abf8d360c09c02aaf9 HTTP/1.1" 200 OK
+INFO:     172.71.222.203:0 - "POST /post/api/v1 HTTP/1.1" 307 Temporary Redirect
+INFO:     172.70.134.72:0 - "POST /post/api/v1 HTTP/1.1" 307 Temporary Redirect
+INFO:     172.70.38.30:0 - "POST /post/api/v1/ HTTP/1.1" 200 OK
+INFO:     146.19.24.28:58760 - "GET / HTTP/1.1" 200 OK
+INFO:     172.70.174.124:0 - "GET /feed/api/v1/65e1e5abf8d360c09c02aaf9 HTTP/1.1" 200 OK
+WARNING:  Invalid HTTP request received.
+INFO:     172.70.39.52:0 - "POST /file HTTP/1.1" 200 OK
+INFO:     172.70.42.130:0 - "GET /file/sBZfjUBPGof6F644_8b6v6y.jpg HTTP/1.1" 200 OK
+INFO:     172.70.34.119:0 - "GET /file/3knTzk42Ylpa2YUR_Repeat%203.png HTTP/1.1" 200 OK
+INFO:     172.71.99.144:0 - "GET /file/3knTzk42Ylpa2YUR_Repeat%203.png HTTP/1.1" 200 OK
+INFO:     172.70.174.230:0 - "GET /file/sBZfjUBPGof6F644_8b6v6y.jpg HTTP/1.1" 200 OK
+INFO:     172.70.42.58:0 - "POST /file HTTP/1.1" 200 OK
+INFO:     172.70.43.48:0 - "GET /file/9tsQC7oRf21MUzCd_Screenshot_20240220_230127.png HTTP/1.1" 200 OK
+WARNING:  Invalid HTTP request received.
+INFO:     139.162.190.203:12661 - "GET / HTTP/1.0" 200 OK
+ERROR:    Exception in ASGI application
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.9/dist-packages/uvicorn/protocols/http/h11_impl.py", line 408, in run_asgi
+    result = await app(  # type: ignore[func-returns-value]
+  File "/usr/local/lib/python3.9/dist-packages/uvicorn/middleware/proxy_headers.py", line 84, in __call__
+    return await self.app(scope, receive, send)
+  File "/usr/local/lib/python3.9/dist-packages/fastapi/applications.py", line 1106, in __call__
+    await super().__call__(scope, receive, send)
+  File "/usr/local/lib/python3.9/dist-packages/starlette/applications.py", line 122, in __call__
+    await self.middleware_stack(scope, receive, send)
+  File "/usr/local/lib/python3.9/dist-packages/starlette/middleware/errors.py", line 184, in __call__
+    raise exc
+  File "/usr/local/lib/python3.9/dist-packages/starlette/middleware/errors.py", line 162, in __call__
+    await self.app(scope, receive, _send)
+  File "/usr/local/lib/python3.9/dist-packages/starlette/middleware/cors.py", line 83, in __call__
+    await self.app(scope, receive, send)
+  File "/usr/local/lib/python3.9/dist-packages/starlette/middleware/exceptions.py", line 79, in __call__
+    raise exc
+  File "/usr/local/lib/python3.9/dist-packages/starlette/middleware/exceptions.py", line 68, in __call__
+    await self.app(scope, receive, sender)
+  File "/usr/local/lib/python3.9/dist-packages/fastapi/middleware/asyncexitstack.py", line 20, in __call__
+    raise e
+  File "/usr/local/lib/python3.9/dist-packages/fastapi/middleware/asyncexitstack.py", line 17, in __call__
+    await self.app(scope, receive, send)
+  File "/usr/local/lib/python3.9/dist-packages/starlette/routing.py", line 718, in __call__
+    await route.handle(scope, receive, send)
+  File "/usr/local/lib/python3.9/dist-packages/starlette/routing.py", line 276, in handle
+    await self.app(scope, receive, send)
+  File "/usr/local/lib/python3.9/dist-packages/starlette/routing.py", line 69, in app
+    await response(scope, receive, send)
+  File "/usr/local/lib/python3.9/dist-packages/starlette/responses.py", line 164, in __call__
+    await send(
+  File "/usr/local/lib/python3.9/dist-packages/starlette/middleware/exceptions.py", line 65, in sender
+    await send(message)
+  File "/usr/local/lib/python3.9/dist-packages/starlette/middleware/errors.py", line 159, in _send
+    await send(message)
+  File "/usr/local/lib/python3.9/dist-packages/uvicorn/protocols/http/h11_impl.py", line 490, in send
+    output = self.conn.send(event=response)
+  File "/usr/local/lib/python3.9/dist-packages/h11/_connection.py", line 512, in send
+    data_list = self.send_with_data_passthrough(event)
+  File "/usr/local/lib/python3.9/dist-packages/h11/_connection.py", line 537, in send_with_data_passthrough
+    self._process_event(self.our_role, event)
+  File "/usr/local/lib/python3.9/dist-packages/h11/_connection.py", line 272, in _process_event
+    self._cstate.process_event(role, type(event), server_switch_event)
+  File "/usr/local/lib/python3.9/dist-packages/h11/_state.py", line 293, in process_event
+    self._fire_event_triggered_transitions(role, _event_type)
+  File "/usr/local/lib/python3.9/dist-packages/h11/_state.py", line 311, in _fire_event_triggered_transitions
+    raise LocalProtocolError(
+h11._util.LocalProtocolError: can't handle event type Response when role=SERVER and state=MUST_CLOSE
+INFO:     172.70.175.4:0 - "GET /feed/api/v1/65e1e5abf8d360c09c02aaf9 HTTP/1.1" 200 OK
+INFO:     172.69.223.58:0 - "GET /feed/api/v1/65e1e5abf8d360c09c02aaf9 HTTP/1.1" 200 OK
+INFO:     172.70.174.124:0 - "GET /feed/api/v1/65e1e5abf8d360c09c02aaf9 HTTP/1.1" 200 OK
+INFO:     172.70.175.74:0 - "GET /feed/api/v1/65e1e5abf8d360c09c02aaf9 HTTP/1.1" 200 OK
+WARNING:  Invalid HTTP request received.
+INFO:     172.70.175.136:0 - "GET /feed/api/v1/65e1e5abf8d360c09c02aaf9 HTTP/1.1" 200 OK
+INFO:     172.70.175.135:0 - "POST /post/api/v1 HTTP/1.1" 307 Temporary Redirect
+INFO:     172.70.174.79:0 - "POST /post/api/v1 HTTP/1.1" 307 Temporary Redirect
+INFO:     172.70.174.153:0 - "GET /feed/api/v1/65e1e5abf8d360c09c02aaf9 HTTP/1.1" 200 OK
+INFO:     162.158.158.254:0 - "POST /post/api/v1 HTTP/1.1" 307 Temporary Redirect
+INFO:     162.158.158.254:0 - "POST /post/api/v1 HTTP/1.1" 307 Temporary Redirect
+INFO:     162.158.158.254:0 - "POST /post/api/v1 HTTP/1.1" 307 Temporary Redirect
+INFO:     172.71.126.106:0 - "POST /post/api/v1 HTTP/1.1" 307 Temporary Redirect
+INFO:     172.71.126.106:0 - "POST /post/api/v1/ HTTP/1.1" 200 OK
+INFO:     162.158.159.2:0 - "POST /post/api/v1 HTTP/1.1" 307 Temporary Redirect
+INFO:     46.174.191.28:38364 - "GET / HTTP/1.0" 200 OK
+INFO:     172.71.222.206:0 - "POST /post/api/v1 HTTP/1.1" 307 Temporary Redirect
+INFO:     172.71.134.115:0 - "GET /feed/api/v1/65e1e5abf8d360c09c02aaf9 HTTP/1.1" 200 OK
+INFO:     172.71.186.164:0 - "GET /feed/api/v1/65e1e5abf8d360c09c02aaf9 HTTP/1.1" 200 OK
+INFO:     172.70.175.60:0 - "POST /post/api/v1 HTTP/1.1" 307 Temporary Redirect
+INFO:     146.19.24.28:43216 - "GET / HTTP/1.1" 200 OK
+INFO:     141.101.76.196:0 - "POST /post/api/v1 HTTP/1.1" 307 Temporary Redirect
+INFO:     141.101.76.196:0 - "POST /post/api/v1/ HTTP/1.1" 200 OK
+INFO:     172.71.103.203:0 - "POST /post/api/v1 HTTP/1.1" 307 Temporary Redirect
+INFO:     172.71.103.203:0 - "POST /post/api/v1 HTTP/1.1" 307 Temporary Redirect
+INFO:     172.71.103.203:0 - "POST /post/api/v1 HTTP/1.1" 307 Temporary Redirect
+INFO:     172.71.103.204:0 - "POST /post/api/v1 HTTP/1.1" 307 Temporary Redirect
+INFO:     172.71.103.204:0 - "POST /post/api/v1 HTTP/1.1" 307 Temporary Redirect
+INFO:     172.71.103.204:0 - "POST /post/api/v1 HTTP/1.1" 307 Temporary Redirect
+INFO:     172.71.103.204:0 - "POST /post/api/v1 HTTP/1.1" 307 Temporary Redirect
+INFO:     141.101.76.245:0 - "POST /post/api/v1 HTTP/1.1" 307 Temporary Redirect
+INFO:     141.101.76.95:0 - "POST /post/api/v1/ HTTP/1.1" 200 OK
+INFO:     172.70.135.175:0 - "POST /post/api/v1 HTTP/1.1" 307 Temporary Redirect
+INFO:     172.71.222.202:0 - "POST /post/api/v1/ HTTP/1.1" 200 OK
+INFO:     172.69.223.58:0 - "GET /feed/api/v1/65e1e5abf8d360c09c02aaf9 HTTP/1.1" 200 OK
+INFO:     172.70.134.79:0 - "POST /post/api/v1 HTTP/1.1" 307 Temporary Redirect
+INFO:     162.158.78.48:0 - "POST /post/api/v1 HTTP/1.1" 307 Temporary Redirect
+INFO:     162.158.78.48:0 - "POST /post/api/v1/ HTTP/1.1" 200 OK
+INFO:     172.71.103.204:0 - "POST /post/api/v1 HTTP/1.1" 307 Temporary Redirect
+INFO:     172.69.223.40:0 - "GET /feed/api/v1/65e1e5abf8d360c09c02aaf9 HTTP/1.1" 200 OK
+INFO:     172.70.174.139:0 - "POST /post/api/v1 HTTP/1.1" 307 Temporary Redirect
+INFO:     172.70.134.28:0 - "POST /post/api/v1 HTTP/1.1" 307 Temporary Redirect
+INFO:     172.70.134.28:0 - "POST /post/api/v1/ HTTP/1.1" 200 OK
+INFO:     172.71.103.203:0 - "POST /post/api/v1 HTTP/1.1" 307 Temporary Redirect
+INFO:     172.70.175.186:0 - "POST /post/api/v1 HTTP/1.1" 307 Temporary Redirect
+INFO:     172.70.175.216:0 - "POST /post/api/v1/ HTTP/1.1" 200 OK
+INFO:     172.71.103.203:0 - "POST /post/api/v1 HTTP/1.1" 307 Temporary Redirect
+INFO:     172.71.103.203:0 - "POST /post/api/v1 HTTP/1.1" 307 Temporary Redirect
+INFO:     172.70.174.73:0 - "GET /feed/api/v1/65e1e5abf8d360c09c02aaf9 HTTP/1.1" 200 OK
+INFO:     83.97.73.245:45592 - "GET /?XDEBUG_SESSION_START=phpstorm HTTP/1.1" 200 OK
+INFO:     83.97.73.245:57786 - "GET /actuator/gateway/routes HTTP/1.1" 404 Not Found
+INFO:     209.141.40.117:34560 - "GET / HTTP/1.1" 200 OK
+INFO:     146.19.24.28:58968 - "GET / HTTP/1.1" 200 OK
+WARNING:  Invalid HTTP request received.
+INFO:     141.98.7.181:44106 - "GET /manager/html HTTP/1.1" 404 Not Found
+ERROR:    Exception in ASGI application
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.9/dist-packages/uvicorn/protocols/http/h11_impl.py", line 408, in run_asgi
+    result = await app(  # type: ignore[func-returns-value]
+  File "/usr/local/lib/python3.9/dist-packages/uvicorn/middleware/proxy_headers.py", line 84, in __call__
+    return await self.app(scope, receive, send)
+  File "/usr/local/lib/python3.9/dist-packages/fastapi/applications.py", line 1106, in __call__
+    await super().__call__(scope, receive, send)
+  File "/usr/local/lib/python3.9/dist-packages/starlette/applications.py", line 122, in __call__
+    await self.middleware_stack(scope, receive, send)
+  File "/usr/local/lib/python3.9/dist-packages/starlette/middleware/errors.py", line 184, in __call__
+    raise exc
+  File "/usr/local/lib/python3.9/dist-packages/starlette/middleware/errors.py", line 162, in __call__
+    await self.app(scope, receive, _send)
+  File "/usr/local/lib/python3.9/dist-packages/starlette/middleware/cors.py", line 83, in __call__
+    await self.app(scope, receive, send)
+  File "/usr/local/lib/python3.9/dist-packages/starlette/middleware/exceptions.py", line 91, in __call__
+    await response(scope, receive, sender)
+  File "/usr/local/lib/python3.9/dist-packages/starlette/responses.py", line 164, in __call__
+    await send(
+  File "/usr/local/lib/python3.9/dist-packages/starlette/middleware/exceptions.py", line 65, in sender
+    await send(message)
+  File "/usr/local/lib/python3.9/dist-packages/starlette/middleware/errors.py", line 159, in _send
+    await send(message)
+  File "/usr/local/lib/python3.9/dist-packages/uvicorn/protocols/http/h11_impl.py", line 490, in send
+    output = self.conn.send(event=response)
+  File "/usr/local/lib/python3.9/dist-packages/h11/_connection.py", line 512, in send
+    data_list = self.send_with_data_passthrough(event)
+  File "/usr/local/lib/python3.9/dist-packages/h11/_connection.py", line 537, in send_with_data_passthrough
+    self._process_event(self.our_role, event)
+  File "/usr/local/lib/python3.9/dist-packages/h11/_connection.py", line 272, in _process_event
+    self._cstate.process_event(role, type(event), server_switch_event)
+  File "/usr/local/lib/python3.9/dist-packages/h11/_state.py", line 293, in process_event
+    self._fire_event_triggered_transitions(role, _event_type)
+  File "/usr/local/lib/python3.9/dist-packages/h11/_state.py", line 311, in _fire_event_triggered_transitions
+    raise LocalProtocolError(
+h11._util.LocalProtocolError: can't handle event type Response when role=SERVER and state=MUST_CLOSE
+INFO:     185.216.71.4:36106 - "CONNECT pro.ip-api.com%3A443 HTTP/1.1" 404 Not Found
+WARNING:  Invalid HTTP request received.
+INFO:     185.191.126.213:56404 - "GET / HTTP/1.1" 200 OK
+INFO:     209.141.42.209:53342 - "GET / HTTP/1.1" 200 OK
+INFO:     60.2.116.210:63065 - "GET /manager/html HTTP/1.1" 404 Not Found
+WARNING:  Invalid HTTP request received.
+INFO:     94.103.124.45:41252 - "CONNECT google.com%3A443 HTTP/1.1" 404 Not Found
+INFO:     39.39.101.191:51050 - "GET /boaform/admin/formLogin?username=ec8&psd=ec8 HTTP/1.0" 404 Not Found
+INFO:     198.235.24.28:61296 - "GET / HTTP/1.1" 200 OK
+INFO:     46.174.191.28:38364 - "GET / HTTP/1.0" 200 OK
+INFO:     87.236.176.91:54871 - "GET / HTTP/1.1" 200 OK
+INFO:     185.36.81.40:34234 - "CONNECT google.com%3A443 HTTP/1.1" 404 Not Found
+INFO:     45.79.181.94:41726 - "GET / HTTP/1.1" 200 OK
+INFO:     172.71.94.163:0 - "POST /post/api/v1 HTTP/1.1" 307 Temporary Redirect
+INFO:     172.71.94.163:0 - "POST /post/api/v1 HTTP/1.1" 307 Temporary Redirect
+INFO:     172.71.94.198:0 - "GET /post/api/v1 HTTP/1.1" 307 Temporary Redirect
+INFO:     172.71.94.131:0 - "POST /post/api/v1 HTTP/1.1" 307 Temporary Redirect
+INFO:     172.71.123.106:0 - "POST /post/api/v1 HTTP/1.1" 307 Temporary Redirect
+INFO:     172.71.123.105:0 - "POST /post/api/v1 HTTP/1.1" 307 Temporary Redirect
+INFO:     172.71.123.105:0 - "POST /post/api/v1 HTTP/1.1" 307 Temporary Redirect
+INFO:     172.71.123.105:0 - "POST /post/api/v1 HTTP/1.1" 307 Temporary Redirect
+INFO:     172.71.123.105:0 - "GET /post/api/v1 HTTP/1.1" 307 Temporary Redirect
+INFO:     172.71.123.105:0 - "GET /post/api/v1 HTTP/1.1" 307 Temporary Redirect
+INFO:     172.71.123.105:0 - "POST /post/api/v1 HTTP/1.1" 307 Temporary Redirect
+INFO:     172.71.123.105:0 - "POST /post/api/v1 HTTP/1.1" 307 Temporary Redirect
+INFO:     172.71.99.132:0 - "GET /api/feed/121212 HTTP/1.1" 404 Not Found
+INFO:     172.71.98.156:0 - "GET /favicon.ico HTTP/1.1" 404 Not Found
+INFO:     172.71.99.131:0 - "GET /api/feed/658a69ea6c4210f526e88fb1 HTTP/1.1" 404 Not Found
+INFO:     172.71.99.131:0 - "GET /feed/api/v1/jyguyg87 HTTP/1.1" 200 OK
+INFO:     172.71.123.106:0 - "GET /post/api/v1 HTTP/1.1" 307 Temporary Redirect
+INFO:     172.71.123.105:0 - "GET /post/api/v1/ HTTP/1.1" 405 Method Not Allowed
+INFO:     172.71.123.105:0 - "POST /post/api/v1/ HTTP/1.1" 200 OK
+INFO:     172.69.223.52:0 - "GET /feed/api/v1/jyguyg87 HTTP/1.1" 200 OK
+WARNING:  StatReload detected changes in 'services/FeedService.py'. Reloading...
+INFO:     Shutting down
+INFO:     Waiting for application shutdown.
+INFO:     Application shutdown complete.
+INFO:     Finished server process [160035]
+INFO:     Started server process [163891]
+INFO:     Waiting for application startup.
+INFO:     Application startup complete.
+It's a weekend!
+{}
+INFO:     172.69.223.51:0 - "GET /feed/api/v1/jyguyg87 HTTP/1.1" 200 OK
+WARNING:  Invalid HTTP request received.
+WARNING:  StatReload detected changes in 'dao/user_dao.py'. Reloading...
+INFO:     Shutting down
+INFO:     Waiting for application shutdown.
+INFO:     Application shutdown complete.
+INFO:     Finished server process [163891]
+INFO:     Started server process [163902]
+INFO:     Waiting for application startup.
+INFO:     Application startup complete.
+It's a weekend!
+INFO:     172.69.223.52:0 - "GET /feed/api/v1/jyguyg87 HTTP/1.1" 500 Internal Server Error
+ERROR:    Exception in ASGI application
+Traceback (most recent call last):
+  File "/root/logchat/dao/user_dao.py", line 35, in get_user_details
+    user_ids = [ObjectId(x) for x in user_ids]
+  File "/root/logchat/dao/user_dao.py", line 35, in <listcomp>
+    user_ids = [ObjectId(x) for x in user_ids]
+  File "/usr/local/lib/python3.9/dist-packages/bson/objectid.py", line 103, in __init__
+    self.__validate(oid)
+  File "/usr/local/lib/python3.9/dist-packages/bson/objectid.py", line 201, in __validate
+    _raise_invalid_id(oid)
+  File "/usr/local/lib/python3.9/dist-packages/bson/objectid.py", line 35, in _raise_invalid_id
+    raise InvalidId(
+bson.errors.InvalidId: '65845de0f3aac0d35e7d6172s' is not a valid ObjectId, it must be a 12-byte input or a 24-character hex string
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.9/dist-packages/uvicorn/protocols/http/h11_impl.py", line 408, in run_asgi
+    result = await app(  # type: ignore[func-returns-value]
+  File "/usr/local/lib/python3.9/dist-packages/uvicorn/middleware/proxy_headers.py", line 84, in __call__
+    return await self.app(scope, receive, send)
+  File "/usr/local/lib/python3.9/dist-packages/fastapi/applications.py", line 1106, in __call__
+    await super().__call__(scope, receive, send)
+  File "/usr/local/lib/python3.9/dist-packages/starlette/applications.py", line 122, in __call__
+    await self.middleware_stack(scope, receive, send)
+  File "/usr/local/lib/python3.9/dist-packages/starlette/middleware/errors.py", line 184, in __call__
+    raise exc
+  File "/usr/local/lib/python3.9/dist-packages/starlette/middleware/errors.py", line 162, in __call__
+    await self.app(scope, receive, _send)
+  File "/usr/local/lib/python3.9/dist-packages/starlette/middleware/cors.py", line 83, in __call__
+    await self.app(scope, receive, send)
+  File "/usr/local/lib/python3.9/dist-packages/starlette/middleware/exceptions.py", line 79, in __call__
+    raise exc
+  File "/usr/local/lib/python3.9/dist-packages/starlette/middleware/exceptions.py", line 68, in __call__
+    await self.app(scope, receive, sender)
+  File "/usr/local/lib/python3.9/dist-packages/fastapi/middleware/asyncexitstack.py", line 20, in __call__
+    raise e
+  File "/usr/local/lib/python3.9/dist-packages/fastapi/middleware/asyncexitstack.py", line 17, in __call__
+    await self.app(scope, receive, send)
+  File "/usr/local/lib/python3.9/dist-packages/starlette/routing.py", line 718, in __call__
+    await route.handle(scope, receive, send)
+  File "/usr/local/lib/python3.9/dist-packages/starlette/routing.py", line 276, in handle
+    await self.app(scope, receive, send)
+  File "/usr/local/lib/python3.9/dist-packages/starlette/routing.py", line 66, in app
+    response = await func(request)
+  File "/usr/local/lib/python3.9/dist-packages/fastapi/routing.py", line 274, in app
+    raw_response = await run_endpoint_function(
+  File "/usr/local/lib/python3.9/dist-packages/fastapi/routing.py", line 191, in run_endpoint_function
+    return await dependant.call(**values)
+  File "/root/logchat/controllers/feed.py", line 29, in get_user_timeline
+    user_posts = convert_to_str(feed_service.get_feed_for_user(user_id))
+  File "/root/logchat/services/FeedService.py", line 34, in get_feed_for_user
+    users = self.user_dao.get_user_details(user_ids)
+  File "/root/logchat/dao/user_dao.py", line 39, in get_user_details
+    except ex:
+NameError: name 'ex' is not defined
+WARNING:  Invalid HTTP request received.
+WARNING:  StatReload detected changes in 'dao/user_dao.py'. Reloading...
+INFO:     Shutting down
+INFO:     Waiting for application shutdown.
+INFO:     Application shutdown complete.
+INFO:     Finished server process [163902]
+Process SpawnProcess-5:
+Traceback (most recent call last):
+  File "/usr/lib/python3.9/multiprocessing/process.py", line 315, in _bootstrap
+    self.run()
+  File "/usr/lib/python3.9/multiprocessing/process.py", line 108, in run
+    self._target(*self._args, **self._kwargs)
+  File "/usr/local/lib/python3.9/dist-packages/uvicorn/_subprocess.py", line 76, in subprocess_started
+    target(sockets=sockets)
+  File "/usr/local/lib/python3.9/dist-packages/uvicorn/server.py", line 61, in run
+    return asyncio.run(self.serve(sockets=sockets))
+  File "/usr/lib/python3.9/asyncio/runners.py", line 44, in run
+    return loop.run_until_complete(main)
+  File "/usr/lib/python3.9/asyncio/base_events.py", line 642, in run_until_complete
+    return future.result()
+  File "/usr/local/lib/python3.9/dist-packages/uvicorn/server.py", line 68, in serve
+    config.load()
+  File "/usr/local/lib/python3.9/dist-packages/uvicorn/config.py", line 467, in load
+    self.loaded_app = import_from_string(self.app)
+  File "/usr/local/lib/python3.9/dist-packages/uvicorn/importer.py", line 21, in import_from_string
+    module = importlib.import_module(module_str)
+  File "/usr/lib/python3.9/importlib/__init__.py", line 127, in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+  File "<frozen importlib._bootstrap>", line 1030, in _gcd_import
+  File "<frozen importlib._bootstrap>", line 1007, in _find_and_load
+  File "<frozen importlib._bootstrap>", line 986, in _find_and_load_unlocked
+  File "<frozen importlib._bootstrap>", line 680, in _load_unlocked
+  File "<frozen importlib._bootstrap_external>", line 790, in exec_module
+  File "<frozen importlib._bootstrap>", line 228, in _call_with_frames_removed
+  File "/root/logchat/main.py", line 4, in <module>
+    from controllers.feed import router as feedapi
+  File "/root/logchat/controllers/feed.py", line 13, in <module>
+    from services.FeedService import FeedService
+  File "/root/logchat/services/FeedService.py", line 2, in <module>
+    from dao.user_dao import UserDao
+  File "/root/logchat/dao/user_dao.py", line 39
+    except Exception ex:
+                     ^
+SyntaxError: invalid syntax
+It's a weekend!
+WARNING:  StatReload detected changes in 'dao/user_dao.py'. Reloading...
+INFO:     Started server process [163919]
+INFO:     Waiting for application startup.
+INFO:     Application startup complete.
+It's a weekend!
+INFO:     172.69.223.52:0 - "GET /feed/api/v1/jyguyg87 HTTP/1.1" 500 Internal Server Error
+ERROR:    Exception in ASGI application
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.9/dist-packages/uvicorn/protocols/http/h11_impl.py", line 408, in run_asgi
+    result = await app(  # type: ignore[func-returns-value]
+  File "/usr/local/lib/python3.9/dist-packages/uvicorn/middleware/proxy_headers.py", line 84, in __call__
+    return await self.app(scope, receive, send)
+  File "/usr/local/lib/python3.9/dist-packages/fastapi/applications.py", line 1106, in __call__
+    await super().__call__(scope, receive, send)
+  File "/usr/local/lib/python3.9/dist-packages/starlette/applications.py", line 122, in __call__
+    await self.middleware_stack(scope, receive, send)
+  File "/usr/local/lib/python3.9/dist-packages/starlette/middleware/errors.py", line 184, in __call__
+    raise exc
+  File "/usr/local/lib/python3.9/dist-packages/starlette/middleware/errors.py", line 162, in __call__
+    await self.app(scope, receive, _send)
+  File "/usr/local/lib/python3.9/dist-packages/starlette/middleware/cors.py", line 83, in __call__
+    await self.app(scope, receive, send)
+  File "/usr/local/lib/python3.9/dist-packages/starlette/middleware/exceptions.py", line 79, in __call__
+    raise exc
+  File "/usr/local/lib/python3.9/dist-packages/starlette/middleware/exceptions.py", line 68, in __call__
+    await self.app(scope, receive, sender)
+  File "/usr/local/lib/python3.9/dist-packages/fastapi/middleware/asyncexitstack.py", line 20, in __call__
+    raise e
+  File "/usr/local/lib/python3.9/dist-packages/fastapi/middleware/asyncexitstack.py", line 17, in __call__
+    await self.app(scope, receive, send)
+  File "/usr/local/lib/python3.9/dist-packages/starlette/routing.py", line 718, in __call__
+    await route.handle(scope, receive, send)
+  File "/usr/local/lib/python3.9/dist-packages/starlette/routing.py", line 276, in handle
+    await self.app(scope, receive, send)
+  File "/usr/local/lib/python3.9/dist-packages/starlette/routing.py", line 66, in app
+    response = await func(request)
+  File "/usr/local/lib/python3.9/dist-packages/fastapi/routing.py", line 274, in app
+    raw_response = await run_endpoint_function(
+  File "/usr/local/lib/python3.9/dist-packages/fastapi/routing.py", line 191, in run_endpoint_function
+    return await dependant.call(**values)
+  File "/root/logchat/controllers/feed.py", line 29, in get_user_timeline
+    user_posts = convert_to_str(feed_service.get_feed_for_user(user_id))
+  File "/root/logchat/services/FeedService.py", line 36, in get_feed_for_user
+    for item in users:
+TypeError: 'InvalidId' object is not iterable
+INFO:     172.69.223.51:0 - "GET /feed/api/v1/jyguyg87 HTTP/1.1" 500 Internal Server Error
+ERROR:    Exception in ASGI application
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.9/dist-packages/uvicorn/protocols/http/h11_impl.py", line 408, in run_asgi
+    result = await app(  # type: ignore[func-returns-value]
+  File "/usr/local/lib/python3.9/dist-packages/uvicorn/middleware/proxy_headers.py", line 84, in __call__
+    return await self.app(scope, receive, send)
+  File "/usr/local/lib/python3.9/dist-packages/fastapi/applications.py", line 1106, in __call__
+    await super().__call__(scope, receive, send)
+  File "/usr/local/lib/python3.9/dist-packages/starlette/applications.py", line 122, in __call__
+    await self.middleware_stack(scope, receive, send)
+  File "/usr/local/lib/python3.9/dist-packages/starlette/middleware/errors.py", line 184, in __call__
+    raise exc
+  File "/usr/local/lib/python3.9/dist-packages/starlette/middleware/errors.py", line 162, in __call__
+    await self.app(scope, receive, _send)
+  File "/usr/local/lib/python3.9/dist-packages/starlette/middleware/cors.py", line 83, in __call__
+    await self.app(scope, receive, send)
+  File "/usr/local/lib/python3.9/dist-packages/starlette/middleware/exceptions.py", line 79, in __call__
+    raise exc
+  File "/usr/local/lib/python3.9/dist-packages/starlette/middleware/exceptions.py", line 68, in __call__
+    await self.app(scope, receive, sender)
+  File "/usr/local/lib/python3.9/dist-packages/fastapi/middleware/asyncexitstack.py", line 20, in __call__
+    raise e
+  File "/usr/local/lib/python3.9/dist-packages/fastapi/middleware/asyncexitstack.py", line 17, in __call__
+    await self.app(scope, receive, send)
+  File "/usr/local/lib/python3.9/dist-packages/starlette/routing.py", line 718, in __call__
+    await route.handle(scope, receive, send)
+  File "/usr/local/lib/python3.9/dist-packages/starlette/routing.py", line 276, in handle
+    await self.app(scope, receive, send)
+  File "/usr/local/lib/python3.9/dist-packages/starlette/routing.py", line 66, in app
+    response = await func(request)
+  File "/usr/local/lib/python3.9/dist-packages/fastapi/routing.py", line 274, in app
+    raw_response = await run_endpoint_function(
+  File "/usr/local/lib/python3.9/dist-packages/fastapi/routing.py", line 191, in run_endpoint_function
+    return await dependant.call(**values)
+  File "/root/logchat/controllers/feed.py", line 29, in get_user_timeline
+    user_posts = convert_to_str(feed_service.get_feed_for_user(user_id))
+  File "/root/logchat/services/FeedService.py", line 36, in get_feed_for_user
+    for item in users:
+TypeError: 'InvalidId' object is not iterable
+WARNING:  Invalid HTTP request received.
+WARNING:  StatReload detected changes in 'dao/user_dao.py'. Reloading...
+INFO:     Shutting down
+INFO:     Waiting for application shutdown.
+INFO:     Application shutdown complete.
+INFO:     Finished server process [163919]
+INFO:     Started server process [163928]
+INFO:     Waiting for application startup.
+INFO:     Application startup complete.
+It's a weekend!
+INFO:     172.69.223.51:0 - "GET /feed/api/v1/jyguyg87 HTTP/1.1" 500 Internal Server Error
+ERROR:    Exception in ASGI application
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.9/dist-packages/uvicorn/protocols/http/h11_impl.py", line 408, in run_asgi
+    result = await app(  # type: ignore[func-returns-value]
+  File "/usr/local/lib/python3.9/dist-packages/uvicorn/middleware/proxy_headers.py", line 84, in __call__
+    return await self.app(scope, receive, send)
+  File "/usr/local/lib/python3.9/dist-packages/fastapi/applications.py", line 1106, in __call__
+    await super().__call__(scope, receive, send)
+  File "/usr/local/lib/python3.9/dist-packages/starlette/applications.py", line 122, in __call__
+    await self.middleware_stack(scope, receive, send)
+  File "/usr/local/lib/python3.9/dist-packages/starlette/middleware/errors.py", line 184, in __call__
+    raise exc
+  File "/usr/local/lib/python3.9/dist-packages/starlette/middleware/errors.py", line 162, in __call__
+    await self.app(scope, receive, _send)
+  File "/usr/local/lib/python3.9/dist-packages/starlette/middleware/cors.py", line 83, in __call__
+    await self.app(scope, receive, send)
+  File "/usr/local/lib/python3.9/dist-packages/starlette/middleware/exceptions.py", line 79, in __call__
+    raise exc
+  File "/usr/local/lib/python3.9/dist-packages/starlette/middleware/exceptions.py", line 68, in __call__
+    await self.app(scope, receive, sender)
+  File "/usr/local/lib/python3.9/dist-packages/fastapi/middleware/asyncexitstack.py", line 20, in __call__
+    raise e
+  File "/usr/local/lib/python3.9/dist-packages/fastapi/middleware/asyncexitstack.py", line 17, in __call__
+    await self.app(scope, receive, send)
+  File "/usr/local/lib/python3.9/dist-packages/starlette/routing.py", line 718, in __call__
+    await route.handle(scope, receive, send)
+  File "/usr/local/lib/python3.9/dist-packages/starlette/routing.py", line 276, in handle
+    await self.app(scope, receive, send)
+  File "/usr/local/lib/python3.9/dist-packages/starlette/routing.py", line 66, in app
+    response = await func(request)
+  File "/usr/local/lib/python3.9/dist-packages/fastapi/routing.py", line 274, in app
+    raw_response = await run_endpoint_function(
+  File "/usr/local/lib/python3.9/dist-packages/fastapi/routing.py", line 191, in run_endpoint_function
+    return await dependant.call(**values)
+  File "/root/logchat/controllers/feed.py", line 29, in get_user_timeline
+    user_posts = convert_to_str(feed_service.get_feed_for_user(user_id))
+  File "/root/logchat/services/FeedService.py", line 34, in get_feed_for_user
+    users = self.user_dao.get_user_details(user_ids)
+  File "/root/logchat/dao/user_dao.py", line 34, in get_user_details
+    user_ids = [ObjectId(x) for x in user_ids]
+  File "/root/logchat/dao/user_dao.py", line 34, in <listcomp>
+    user_ids = [ObjectId(x) for x in user_ids]
+  File "/usr/local/lib/python3.9/dist-packages/bson/objectid.py", line 103, in __init__
+    self.__validate(oid)
+  File "/usr/local/lib/python3.9/dist-packages/bson/objectid.py", line 201, in __validate
+    _raise_invalid_id(oid)
+  File "/usr/local/lib/python3.9/dist-packages/bson/objectid.py", line 35, in _raise_invalid_id
+    raise InvalidId(
+bson.errors.InvalidId: '65845de0f3aac0d35e7d6172s' is not a valid ObjectId, it must be a 12-byte input or a 24-character hex string
+{'65e1e5abf8d360c09c02aaf9': {'id': '65e1e5abf8d360c09c02aaf9', 'name': '1709303211566hitebindu@gmail.com', 'profile_image': 'https://lh3.googleusercontent.com/a/ACg8ocI6Fb7_Lvn_2LPBzOwyY3_JXUQxbubQ1RA2FR6OdeeS=s96-c'}}
+INFO:     172.69.223.52:0 - "GET /feed/api/v1/jyguyg87 HTTP/1.1" 200 OK
+WARNING:  Invalid HTTP request received.
+INFO:     18.171.252.73:40586 - "GET /favicon.ico HTTP/1.1" 404 Not Found
+INFO:     18.171.252.73:34208 - "GET /manage/account/login HTTP/1.1" 404 Not Found
+{'65e1e5abf8d360c09c02aaf9': {'id': '65e1e5abf8d360c09c02aaf9', 'name': '1709303211566hitebindu@gmail.com', 'profile_image': 'https://lh3.googleusercontent.com/a/ACg8ocI6Fb7_Lvn_2LPBzOwyY3_JXUQxbubQ1RA2FR6OdeeS=s96-c'}}
+INFO:     141.101.76.21:0 - "GET /feed/api/v1/jyguyg87 HTTP/1.1" 200 OK
+WARNING:  Invalid HTTP request received.
+INFO:     162.243.128.5:0 - "GET /cgi-bin/login HTTP/1.1" 404 Not Found
+INFO:     167.94.146.55:0 - "GET / HTTP/1.1" 200 OK
+INFO:     167.94.146.55:0 - "GET / HTTP/1.1" 200 OK
+INFO:     167.94.146.55:0 - "GET /favicon.ico HTTP/1.1" 404 Not Found
+WARNING:  StatReload detected changes in 'dao/user_dao.py'. Reloading...
+INFO:     Shutting down
+INFO:     Waiting for application shutdown.
+INFO:     Application shutdown complete.
+INFO:     Finished server process [163928]
+INFO:     Started server process [163947]
+INFO:     Waiting for application startup.
+INFO:     Application startup complete.
