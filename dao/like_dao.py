@@ -16,15 +16,18 @@ class LikeDao():
 
     def dislike(self, user_id, post_id):
         like_collection = self.db["posts_like"]
-        query = {"user1": user_id, post_id: post_id}
+        query = {'user1': user_id, 'post_id': post_id}
         deleted_post = like_collection.find_one_and_delete(query)
         if deleted_post:
             deleted_post["_id"] = str(deleted_post["_id"])
         return deleted_post
     def haslike(self, user_id, post_id):
         like_collection = self.db["posts_like"]
-        query = {"user1": user_id, post_id: post_id}
+        query = {'user1': user_id, 'post_id': post_id}
+        #print(query)
+        #import pdb;pdb.set_trace()
         post = like_collection.find_one(query)
+        #print (post)
         if post:
             post["_id"] = str(post["_id"])
             return post
