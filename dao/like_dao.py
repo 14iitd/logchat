@@ -21,6 +21,13 @@ class LikeDao():
         if deleted_post:
             deleted_post["_id"] = str(deleted_post["_id"])
         return deleted_post
+    def haslike(self, user_id, post_id):
+        like_collection = self.db["posts_like"]
+        query = {"user1": user_id, post_id: post_id}
+        post = like_collection.find_one(query)
+        if post:
+            post["_id"] = str(post["_id"])
+        return None
 
     def get_post_likes(self, post_id):
         like_collection = self.db["posts_like"]

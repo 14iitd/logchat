@@ -36,6 +36,12 @@ async def like_post(post_id: str, payload: dict, request: Request):
 async def like_post(post_id: str, payload: dict, request: Request):
     like_posts = like_service.dislike_post(user_id=payload.get("user_id"),post_id=post_id)
     return JSONResponse({"success":"OK"})
+@router.post("/haslike/api/v1/post/{post_id}", response_model=str)
+async def like_post(post_id: str, payload: dict, request: Request):
+    like_posts = like_service.haslike_post(user_id=payload.get("user_id"),post_id=post_id)
+    if like_posts:
+        return JSONResponse({"liked": True})
+    return JSONResponse({"liked":False})
 @router.post("/relog/api/v1/{post_id}", )
 async def relog_post(post_id:str,request: Request, request_data: Dict):
     headers = dict(request.headers)
