@@ -27,6 +27,7 @@ class LikeDao():
         post = like_collection.find_one(query)
         if post:
             post["_id"] = str(post["_id"])
+            return post
         return None
 
     def get_post_likes(self, post_id):
