@@ -20,6 +20,9 @@ class LikeService():
     def like_post(self, user_id, post_id):
         post_details = self.post_dao.get_post_by_id(post_id)
         return self.like_dao.like(user_id, post_id, post_details.get("user_id"))
+    def dislike_post(self, user_id, post_id):
+        post_details = self.post_dao.get_post_by_id(post_id)
+        return self.like_dao.dislike(user_id, post_id, post_details.get("user_id"))
 
     def unlike_post(self, user_id, post_id):
         return self.like_dao.unlike(user_id,post_id)

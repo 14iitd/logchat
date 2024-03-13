@@ -14,7 +14,7 @@ class LikeDao():
         created_post["_id"] = str(created_post["_id"])
         return created_post
 
-    def unlike(self, user_id, post_id):
+    def dislike(self, user_id, post_id):
         like_collection = self.db["posts_like"]
         query = {"user1": user_id, post_id: post_id}
         deleted_post = like_collection.find_one_and_delete(query)

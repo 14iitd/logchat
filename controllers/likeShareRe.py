@@ -32,7 +32,10 @@ class CustomJSONEncoder(json.JSONEncoder):
 async def like_post(post_id: str, payload: dict, request: Request):
     like_posts = like_service.like_post(user_id=payload.get("user_id"),post_id=post_id)
     return JSONResponse({"success":"OK"})
-
+@router.post("/dislike/api/v1/post/{post_id}", response_model=str)
+async def like_post(post_id: str, payload: dict, request: Request):
+    like_posts = like_service.dislike_post(user_id=payload.get("user_id"),post_id=post_id)
+    return JSONResponse({"success":"OK"})
 @router.post("/relog/api/v1/{post_id}", )
 async def relog_post(post_id:str,request: Request, request_data: Dict):
     headers = dict(request.headers)
