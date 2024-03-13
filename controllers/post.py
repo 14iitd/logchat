@@ -27,7 +27,7 @@ class CustomJSONEncoder(json.JSONEncoder):
             return super().default(obj)
 
 
-@router.post("/post/api/v1/", )
+@router.post("/post/api/v1", )
 async def create_post(request: Request, request_data: Dict):
     headers = dict(request.headers)
     user_id = headers.get("user_id")

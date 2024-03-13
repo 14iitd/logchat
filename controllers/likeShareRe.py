@@ -28,7 +28,7 @@ class CustomJSONEncoder(json.JSONEncoder):
             return super().default(obj)
 
 
-@router.post("/like/api/v1/post/{post_id}/", response_model=str)
+@router.post("/like/api/v1/post/{post_id}", response_model=str)
 async def like_post(post_id: str, payload: dict, request: Request):
     like_posts = like_service.like_post(user_id=payload.get("user_id"),post_id=post_id)
     return JSONResponse({"success":"OK"})

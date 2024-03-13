@@ -32,7 +32,7 @@ class UserDao():
     def get_user_details(self, user_ids):
         try:
             user_collection = self.db["users"]
-            user_ids = [ObjectId(x) for x in user_ids]
+            user_ids = [ObjectId(x) for x in user_ids if ObjectId.is_valid(x)]
             # import pdb;pdb.set_trace()
             users = user_collection.find({"_id": {"$in": user_ids}})
             return users
