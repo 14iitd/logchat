@@ -54,7 +54,7 @@ async def update_profile(user_id: str, payload: Dict, request: Request):
     # import pdb;
     # pdb.set_trace()
     profile_image = payload.get("image")
-    name = payload.get("name")
+    name = payload.get("full_name")
     bio = payload.get("bio")
     username = payload.get("username")
     update_data={}
