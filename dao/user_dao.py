@@ -54,7 +54,6 @@ class UserDao():
         user_collection = self.db["users"]
         user_collection.update_one(
             {"_id": ObjectId(user_id)},
-            {"$set": {"bio": data.get("bio"), "full_name": data["name"], "image_url": data["profile_image"],
-                      "username": data["username"]}}
+            {"$set": data}
         )
         return True

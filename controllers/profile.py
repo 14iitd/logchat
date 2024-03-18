@@ -59,11 +59,14 @@ async def update_profile(user_id: str, payload: Dict, request: Request):
     username = payload.get("username")
     update_data={}
     if profile_image:
-        update_data["profile_image"] =profile_image
+        update_data["image_url"] =profile_image
     if bio:
         update_data["bio"] = bio
     if username:
         update_data["username"] = username
+    if name:
+        update_data["full_name"] = name
+
     user = profile_service.update_user_details(user_id, update_data)
     # import pdb;pdb.set_trace()
     return JSONResponse(content=user, status_code=200)
