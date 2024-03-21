@@ -1,4 +1,5 @@
 from fastapi import FastAPI
+from starlette.responses import FileResponse
 
 from controllers.post import router as postapi
 from controllers.feed import router as feedapi
@@ -36,7 +37,10 @@ app.include_router(followapis)
 async def root():
     return {"message": "Hello World"}
 
+@app.get("/privacy")
+async def health_check():
 
+    return FileResponse("privacy.html")
 # If this script is executed, run the FastAPI application directly
 if __name__ == "__main__":
     import uvicorn
