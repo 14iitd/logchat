@@ -49,6 +49,7 @@ async def login(request:Request,payload:Dict,user: dict = Depends(get_default_us
         user_data = {
             "email": payload.get("email"),
             "token": token,
+            "bio":"",
             "full_name": payload.get("name"),
             "username":str(current_millis)+payload.get("email"),
             "image_url":payload.get("image_url  ")}
