@@ -16,7 +16,7 @@ from services.followService import FollowService
 followService = FollowService()
 
 
-@router.post("/api/follow", response_model=str)
+@router.post("/follow/api/v1", response_model=str)
 async def follow_user(request: Request, request_data: Dict):
     headers = dict(request.headers)
     token = headers.get("token")
@@ -32,7 +32,7 @@ async def follow_user(request: Request, request_data: Dict):
     return f"You are now following {created_follow}"
 
 
-@router.post("/api/unfollow", response_model=str)
+@router.post("/unfollow/api/v1", response_model=str)
 async def follow_user(request: Request, request_data: Dict):
     headers = dict(request.headers)
     token = headers.get("token")

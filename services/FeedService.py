@@ -44,9 +44,9 @@ class FeedService():
         for item in posts:
             #import pdb;pdb.set_trace()
             item["user"] = users_map.get(item["user_id"])
-            item["likes"]=likes_map.get(item["_id"])
-            item["relog"] = 2
-            item["share"] = 31
+            item["likes"]=likes_map.get(item["_id"]) or 0
+            item["relog"] =0
+            item["share"] = 0
         #import pdb;
         #pdb.set_trace()
         return posts
